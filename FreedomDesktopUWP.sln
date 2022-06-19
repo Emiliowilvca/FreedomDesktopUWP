@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freedom.UICore", "Freedom.U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freedom.Report", "Freedom.Report\Freedom.Report.csproj", "{0734F6F6-9819-4F67-A4CB-F1F501EB9886}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freedom.Core", "Freedom.Core\Freedom.Core.csproj", "{F07307B2-93FD-488C-B73E-7DBC5F9ABE4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freedom.Core", "Freedom.Core\Freedom.Core.csproj", "{F07307B2-93FD-488C-B73E-7DBC5F9ABE4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

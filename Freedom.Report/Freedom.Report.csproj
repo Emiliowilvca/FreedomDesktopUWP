@@ -131,6 +131,12 @@
       <Version>[6.2.14]</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Freedom.Core\Freedom.Core.csproj">
+      <Project>{f07307b2-93fd-488c-b73e-7dbc5f9abe4c}</Project>
+      <Name>Freedom.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
