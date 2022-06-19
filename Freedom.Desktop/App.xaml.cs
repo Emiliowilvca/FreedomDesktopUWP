@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Freedom.UICore.Views.ShellViews;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace Freedom.Desktop
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            this.RequestedTheme = ApplicationTheme.Light;
+            this.RequestedTheme = ApplicationTheme.Dark;
         }
 
         
@@ -59,11 +60,13 @@ namespace Freedom.Desktop
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(LoginPage), e.Arguments);
                 }
 
                 // Ensure the current window is active
                 Window.Current.Activate();
+
+                
             }
         }
 
@@ -80,5 +83,8 @@ namespace Freedom.Desktop
             //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
+
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿ 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,15 @@ namespace Freedom.Desktop
         public MainPage()
         {
             this.InitializeComponent();
+
+             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+
         }
     }
 }

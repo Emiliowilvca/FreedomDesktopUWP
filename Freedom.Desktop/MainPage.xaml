@@ -6,18 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-      
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid >
 
-    <NavigationView
-        IsSettingsVisible="True"
-        ExpandedModeThresholdWidth="1280"
-         Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
-        <NavigationView.MenuItems>
-            <NavigationViewItem Icon="Accept" Content="botton1"/>
-            <NavigationViewItem Icon="AddFriend" Content="botton2"/>
-            <NavigationViewItem Icon="Bold" Content="botton1"/>
-        </NavigationView.MenuItems>
-        
-    </NavigationView>
+        <Button Content="pagex"  Click="Button_Click" Height="50" Width="120" />
+    </Grid>
 </Page>
