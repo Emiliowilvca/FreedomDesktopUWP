@@ -1,0 +1,121 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.ThemeDictionaries>
+
+        <!--<Thickness x:Key="NavigationViewContentMargin">0,48,0,0</Thickness>-->
+        <!--
+            ============================================================================
+            LIGHT
+            ============================================================================
+        -->
+
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="ColorPrimaryDark3" Color="{StaticResource AccentColor8}" />
+            <SolidColorBrush x:Key="ColorPrimaryDark2" Color="{StaticResource AccentColor7}" />
+            <SolidColorBrush x:Key="ColorPrimaryDark1" Color="{StaticResource AccentColor6}" />
+            <SolidColorBrush x:Key="ColorPrimary" Color="{StaticResource AccentColor5}" />
+            <SolidColorBrush x:Key="ColorPrimaryLight1" Color="{StaticResource AccentColor4}" />
+            <SolidColorBrush x:Key="ColorPrimaryLight2" Color="{StaticResource AccentColor3}" />
+            <SolidColorBrush x:Key="ColorPrimaryLight3" Color="{StaticResource AccentColor2}" />
+            <SolidColorBrush x:Key="ColorAccentDark3" Color="{StaticResource SystemAccentColorDark3}" />
+            <SolidColorBrush x:Key="ColorAccentDark2" Color="{StaticResource SystemAccentColorDark2}" />
+            <SolidColorBrush x:Key="ColorAccentDark1" Color="{StaticResource SystemAccentColorDark1}" />
+            <SolidColorBrush x:Key="ColorAccent" Color="{StaticResource SystemAccentColor}" />
+            <SolidColorBrush x:Key="ColorAccentLight1" Color="{StaticResource SystemAccentColorLight1}" />
+            <SolidColorBrush x:Key="ColorAccentLight2" Color="{StaticResource SystemAccentColorLight2}" />
+            <SolidColorBrush x:Key="ColorAccentLight3" Color="{StaticResource SystemAccentColorLight3}" />
+            <SolidColorBrush x:Key="ColorSecondaryDark3" Color="{StaticResource LightColor10}" />
+            <SolidColorBrush x:Key="ColorSecondaryDark2" Color="{StaticResource LightColor9}" />
+            <SolidColorBrush x:Key="ColorSecondaryDark1" Color="{StaticResource LightColor8}" />
+            <SolidColorBrush x:Key="ColorSecondary" Color="{StaticResource LightColor7}" />
+            <SolidColorBrush x:Key="ColorSecondaryLight1" Color="{StaticResource LightColor6}" />
+            <SolidColorBrush x:Key="ColorSecondaryLight2" Color="{StaticResource LightColor5}" />
+            <SolidColorBrush x:Key="ColorSecondaryLight3" Color="{StaticResource LightColor4}" />
+            <SolidColorBrush x:Key="ColorTextPrimary" Color="{StaticResource PrimaryColor6}" />
+            <SolidColorBrush x:Key="ColorTextAccent" Color="{StaticResource AccentColor6}" />
+            <SolidColorBrush x:Key="ColorTextLight" Color="{StaticResource DarkColor0}" />
+            <SolidColorBrush x:Key="ColorTextDark" Color="{StaticResource DarkColor11}" />
+            <SolidColorBrush x:Key="ColorTextDisable" Color="{StaticResource LightColor9}" />
+
+            <SolidColorBrush x:Key="ColorNavigationMenuBackcolor" Color="{StaticResource LightColor3}" />
+            <SolidColorBrush x:Key="ColorHomePageHeaderBackcolor" Color="{StaticResource LightColor2 }" />
+
+            <SolidColorBrush x:Key="ColorXXX" Color="#FFE6E6E6"/>
+
+
+            <!-- sobreescritura de color basicos-->
+            <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" Color="{StaticResource SystemChromeMediumColor}" />
+
+            <Thickness x:Key="NavigationViewHeaderMargin">1,0,0,0</Thickness>
+
+
+
+        </ResourceDictionary>
+
+        <!--
+            ============================================================================
+            DARK
+            ============================================================================
+        -->
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="ColorPrimaryDark3" Color="{StaticResource AccentColor8}" />
+            <SolidColorBrush x:Key="ColorPrimaryDark2" Color="{StaticResource AccentColor7}" />
+            <SolidColorBrush x:Key="ColorPrimaryDark1" Color="{StaticResource AccentColor6}" />
+            <SolidColorBrush x:Key="ColorPrimary" Color="{StaticResource AccentColor5}" />
+            <SolidColorBrush x:Key="ColorPrimaryLight1" Color="{StaticResource AccentColor4}" />
+            <SolidColorBrush x:Key="ColorPrimaryLight2" Color="{StaticResource AccentColor3}" />
+            <SolidColorBrush x:Key="ColorPrimaryLight3" Color="{StaticResource AccentColor2}" />
+            <SolidColorBrush x:Key="ColorAccentDark3" Color="{StaticResource SystemAccentColorDark3}" />
+            <SolidColorBrush x:Key="ColorAccentDark2" Color="{StaticResource SystemAccentColorDark2}" />
+            <SolidColorBrush x:Key="ColorAccentDark1" Color="{StaticResource SystemAccentColorDark1}" />
+            <SolidColorBrush x:Key="ColorAccent" Color="{StaticResource SystemAccentColor}" />
+            <SolidColorBrush x:Key="ColorAccentLight1" Color="{StaticResource SystemAccentColorLight1}" />
+            <SolidColorBrush x:Key="ColorAccentLight2" Color="{StaticResource SystemAccentColorLight2}" />
+            <SolidColorBrush x:Key="ColorAccentLight3" Color="{StaticResource SystemAccentColorLight3}" />
+            <SolidColorBrush x:Key="ColorSecondaryDark3" Color="{StaticResource DarkColor11}" />
+            <SolidColorBrush x:Key="ColorSecondaryDark2" Color="{StaticResource DarkColor10}" />
+            <SolidColorBrush x:Key="ColorSecondaryDark1" Color="{StaticResource DarkColor9}" />
+            <SolidColorBrush x:Key="ColorSecondary" Color="{StaticResource DarkColor8}" />
+            <SolidColorBrush x:Key="ColorSecondaryLight1" Color="{StaticResource DarkColor7}" />
+            <SolidColorBrush x:Key="ColorSecondaryLight2" Color="{StaticResource DarkColor6}" />
+            <SolidColorBrush x:Key="ColorSecondaryLight3" Color="{StaticResource DarkColor5}" />
+            <SolidColorBrush x:Key="ColorTextPrimary" Color="{StaticResource PrimaryColor5}" />
+            <SolidColorBrush x:Key="ColorTextAccent" Color="{StaticResource PrimaryColor5}" />
+            <SolidColorBrush x:Key="ColorTextLight" Color="{StaticResource DarkColor0}" />
+            <SolidColorBrush x:Key="ColorTextDark" Color="{StaticResource DarkColor11}" />
+            <SolidColorBrush x:Key="ColorTextDisable" Color="{StaticResource LightColor2}" />
+
+            <SolidColorBrush x:Key="ColorNavigationMenuBackcolor" Color="{StaticResource DarkColor8}" />
+            <SolidColorBrush x:Key="ColorHomePageHeaderBackcolor" Color="{StaticResource DarkColor8}" />
+
+            <!-- sobreescritura de color basicos-->
+            <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush"  Color="{StaticResource SystemChromeMediumColor}" />
+
+            <SolidColorBrush x:Key="ColorXXX" Color="#FF000000"/>
+            <!--
+                    sobreescribir colores de botton
+
+            <StaticResource x:Key="AccentButtonBackground" ResourceKey="SystemControlForegroundAccentBrush" />
+            <StaticResource x:Key="AccentButtonBackgroundPointerOver" ResourceKey="SystemControlForegroundAccentBrush" />
+            <StaticResource x:Key="AccentButtonBackgroundPressed" ResourceKey="SystemControlBackgroundBaseMediumLowBrush" />
+            <StaticResource x:Key="AccentButtonBackgroundDisabled" ResourceKey="SystemControlBackgroundBaseLowBrush" />
+
+            -->
+
+            <Thickness x:Key="NavigationViewHeaderMargin">1,0,0,0</Thickness>
+
+        </ResourceDictionary>
+
+        <!--
+            ============================================================================
+            HighContrast
+            ============================================================================
+        -->
+        <ResourceDictionary x:Key="HighContrast">
+            <SolidColorBrush x:Key="myBrush"
+                             Color="{ThemeResource SystemColorButtonFaceColor}" />
+            <SolidColorBrush x:Key="ComboBoxDropDownBackground" Color="{ThemeResource AccentColor2 }" />
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>

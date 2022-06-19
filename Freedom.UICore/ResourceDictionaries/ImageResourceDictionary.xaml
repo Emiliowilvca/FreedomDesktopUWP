@@ -1,0 +1,22 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <BitmapImage x:Key="HomeLogo" UriSource="ms-appx:///ResourceCore/Images/HomeLogo.png" />
+    <BitmapImage x:Key="FreedomLogo" UriSource="ms-appx:///ResourceCore/Images/FreedomIcon.png" />
+    <BitmapImage x:Key="LoginVector" UriSource="ms-appx:///ResourceCore/Images/LoginVector.jpg" />
+    <BitmapImage x:Key="RecoverPassword" UriSource="ms-appx:///ResourceCore/Images/RecoverPassword.jpg" />
+    <BitmapImage x:Key="RegisterNewUser" UriSource="ms-appx:///ResourceCore/Images/RegisterNewUser.jpg" />
+    <BitmapImage x:Key="UrlBase" UriSource="ms-appx:///ResourceCore/Images/UrlBase.jpg" />
+    <BitmapImage x:Key="ComfirmEmail" UriSource="ms-appx:///ResourceCore/Images/ComfirmEmail.jpg" />
+
+
+
+
+
+    <BitmapImage x:Key="LoginBackground" UriSource="ms-appx:///ResourceCore/Images/LoginBackground.png" />
+    <BitmapImage x:Key="LoginBackground1" UriSource="ms-appx:///ResourceCore/Images/LoginBackground1.jpg" />
+    <BitmapImage x:Key="LoginBackground2" UriSource="ms-appx:///ResourceCore/Images/POSBackground.png" />
+    <BitmapImage x:Key="LoginAbstracBackground" UriSource="ms-appx:///ResourceCore/Images/LoginAbstracBackground.jpg" />
+</ResourceDictionary>

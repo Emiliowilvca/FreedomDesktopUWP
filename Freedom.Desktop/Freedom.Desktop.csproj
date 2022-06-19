@@ -163,12 +163,6 @@
       <Version>2.8.0-prerelease.220601001</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Freedom.UICore\Freedom.UICore.csproj">
-      <Project>{78B2FA7A-5855-4A57-BEDE-FD2D2D62CE75}</Project>
-      <Name>Freedom.UICore</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

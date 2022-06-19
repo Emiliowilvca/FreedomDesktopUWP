@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Freedom.UICore.ResourceDictionaries">
+
+    <DataTemplate x:Key="Textbox.HeaderTemplate">
+        <TextBlock Text="{Binding}" Margin="5 0 0 -7" />
+    </DataTemplate>
+
+    <Style x:Key="TextboxIconHeaderStyle" TargetType="FontIcon" >
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="Margin" Value="0 0 1 5"/>
+        <Setter Property="FontFamily" Value="{StaticResource MaterialDesignIcons}"/>    
+
+    </Style>
+    
+    
+</ResourceDictionary>
