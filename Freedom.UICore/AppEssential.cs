@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.UI.Xaml;
 using System;
 using Windows.UI.Xaml;
 

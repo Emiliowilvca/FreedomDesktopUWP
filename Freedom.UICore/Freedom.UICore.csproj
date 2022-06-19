@@ -183,6 +183,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendingMessages\NavigationMessage.cs" />
     <Compile Include="SendingMessages\VMSendMessage.cs" />
+    <Compile Include="Views\ShellViews\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StatusBarViews\StatusBarNotifyPage.xaml.cs">
       <DependentUpon>StatusBarNotifyPage.xaml</DependentUpon>
     </Compile>
@@ -290,6 +293,10 @@
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ShellViews\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\StatusBarViews\StatusBarNotifyPage.xaml">
       <SubType>Designer</SubType>

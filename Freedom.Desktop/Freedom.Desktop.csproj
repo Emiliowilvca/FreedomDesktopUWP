@@ -95,7 +95,7 @@
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
@@ -162,6 +162,16 @@
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.8.0-prerelease.220601001</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Freedom.Core\Freedom.Core.csproj">
+      <Project>{f07307b2-93fd-488c-b73e-7dbc5f9abe4c}</Project>
+      <Name>Freedom.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Freedom.UICore\Freedom.UICore.csproj">
+      <Project>{56668BAD-D0D1-4AE2-AEC2-C3B97529BD79}</Project>
+      <Name>Freedom.UICore</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
