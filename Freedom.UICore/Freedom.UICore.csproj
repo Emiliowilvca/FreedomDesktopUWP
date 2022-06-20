@@ -319,9 +319,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ResourceCore\Fonts\Font Awesome 6 Brands-Regular-400.otf">
+    <EmbeddedResource Include="ResourceCore\Fonts\Font Awesome 6 Brands-Regular-400.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResourceCore\Images\ComfirmEmail.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -357,34 +357,34 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ResourceCore\Fonts\Font Awesome 6 Free-Regular-400.otf">
+    <EmbeddedResource Include="ResourceCore\Fonts\Font Awesome 6 Free-Regular-400.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ResourceCore\Fonts\Font Awesome 6 Free-Solid-900.otf">
+    <EmbeddedResource Include="ResourceCore\Fonts\Font Awesome 6 Free-Solid-900.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ResourceCore\Fonts\materialdesignicons-webfont.ttf">
+    <EmbeddedResource Include="ResourceCore\Fonts\materialdesignicons-webfont.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ResourceCore\Fonts\MaterialIcons-Regular.ttf">
+    <EmbeddedResource Include="ResourceCore\Fonts\MaterialIcons-Regular.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ResourceCore\Fonts\SegMDL2.ttf">
+    <EmbeddedResource Include="ResourceCore\Fonts\SegMDL2.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ResourceCore\Fonts\Segoe Fluent Icons.ttf">
+    <EmbeddedResource Include="ResourceCore\Fonts\Segoe Fluent Icons.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

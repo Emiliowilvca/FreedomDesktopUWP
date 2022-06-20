@@ -33,7 +33,7 @@ namespace Freedom.Desktop
             IShellNavigationService shellNavigationService = AppEssential.ServiceProvider.GetRequiredService<IShellNavigationService>();
 
             shellNavigationService.Initialize(this.ShellFrame);
-            shellNavigationService.Navigate<LoginPage>();
+            shellNavigationService.Navigate<ConfirmEmailPage>();
 
         }
     }

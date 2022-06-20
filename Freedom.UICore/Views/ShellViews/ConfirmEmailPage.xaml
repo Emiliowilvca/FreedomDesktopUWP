@@ -5,10 +5,91 @@
     xmlns:local="using:Freedom.UICore.Views.ShellViews"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ico="using:Freedom.Frontend.FontIcons"
+    xmlns:ct="using:Freedom.UICore.Controls"
+    xmlns:lg="using:Freedom.Utility.Langs"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-
+    <Grid ct:GridPlus.ColumnDefinitions="*, 3*, *"
+          ct:GridPlus.RowDefinitions="*, 4*, *">
+        <Grid.Background>
+            <ImageBrush ImageSource="{StaticResource LoginAbstracBackground}" Stretch="Fill" />
+        </Grid.Background>
+        <Border Grid.Column="1" Grid.Row="1"
+                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                BorderBrush="{ThemeResource ColorSecondaryDark3}"
+                BorderThickness="1"
+                CornerRadius="7">
+            <Grid Grid.Column="1" Grid.Row="1" ct:GridPlus.ColumnDefinitions="*,*">
+                <Border Grid.Column="0">
+                    <Border.Background>
+                        <ImageBrush ImageSource="{StaticResource ComfirmEmail}" Stretch="Fill" />
+                    </Border.Background>
+                </Border>
+                <Grid Grid.Column="1">
+                    <ScrollViewer>
+                        <StackPanel>
+                            <!--Logo-->
+                            <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.AccountQuestion}"
+                                      FontFamily="{StaticResource MaterialDesignIcons}"
+                                      Foreground="{StaticResource SystemAccentColorDark1}"
+                                      FontSize="85"
+                                      HorizontalAlignment="Center"
+                                      Margin="0 25 0 0" />
+                            <!--Title-->
+                            <TextBlock Text="{x:Bind lg:Lang.NewUserValidation}"
+                                       FontSize="{StaticResource FontSize.Title}"
+                                       HorizontalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="0 20 0 0" />
+                            <!--ConfirmationCode-->
+                            <Grid Margin="50 40 35 0"
+                                  ct:GridPlus.ColumnDefinitions="Auto, *">
+                                <FontIcon Grid.Column="0"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.AccountKey}"
+                                          Foreground="{StaticResource SystemAccentColorDark1}"
+                                          FontSize="20"
+                                          HorizontalAlignment="Left" />
+                                <TextBox Grid.Column="1"
+                                         PlaceholderText="{x:Bind lg:Lang.ConfirmationCode}"
+                                         Margin="2 0 0 0" />
+                            </Grid>
+                            <!--RecoverPasswordButton-->
+                            <Button HorizontalAlignment="Center"
+                                    Margin="50 50 0 0"
+                                    Width="250"
+                                     
+                                    Style="{StaticResource AccentButtonStyle}">
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                    <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                              Glyph="{x:Bind ico:MaterialDesignIcons.Check}" />
+                                    <TextBlock Text="{x:Bind lg:Lang.Accept}"
+                                               FontSize="{StaticResource FontSize.Body}"
+                                               Margin="5 0" />
+                                </StackPanel>
+                            </Button>
+                            <!--Cancel Button-->
+                            <Button HorizontalAlignment="Center"
+                                    Margin="50 20 0 0"
+                                    Width="250"
+                                     >
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                    <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                              Glyph="{x:Bind ico:MaterialDesignIcons.ArrowLeft}" />
+                                    <TextBlock Text="{x:Bind lg:Lang.GoBack}"
+                                               FontSize="{StaticResource FontSize.Body}"
+                                               Margin="5 0" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </Border>
     </Grid>
 </Page>
