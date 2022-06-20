@@ -1,7 +1,4 @@
-﻿using Freedom.UICore.BaseClass;
-using Freedom.UICore.ViewModels.ShellViews;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,16 +20,11 @@ namespace Freedom.UICore.Views.ShellViews
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class LoginPage : Page, IViewModel<LoginViewModel>
+    public sealed partial class ConfirmEmailPage : Page
     {
-        public LoginPage()
+        public ConfirmEmailPage()
         {
             this.InitializeComponent();
-
-            ViewModel = AppEssential.ServiceProvider.GetRequiredService<LoginViewModel>();
-            
         }
-
-        public LoginViewModel ViewModel { get; set; }
     }
 }

@@ -9,6 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid >
 
-        <Button Content="pagex"  Click="Button_Click" Height="50" Width="120" />
+        <StackPanel Spacing="10">
+            <Button Content="pagex"  Click="Button_Click" Height="50" Width="120" />
+            <TextBox Header="prueba"/>            
+        </StackPanel>        
+        
     </Grid>
 </Page>

@@ -1,4 +1,7 @@
-﻿using Freedom.UICore.Views.ShellViews;
+﻿using Freedom.UICore;
+using Freedom.UICore.Views.ShellViews;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,13 +24,38 @@ namespace Freedom.Desktop
      
     sealed partial class App : Application
     {
-        
+
+
+        private readonly IConfigurationRoot _configurationRoot;
+
+
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            this.RequestedTheme = ApplicationTheme.Dark;
+            this.RequestedTheme = ApplicationTheme.Light;
+
+
+            //var builder = new ConfigurationBuilder()
+            //                   .SetBasePath(Package.Current.InstalledLocation.Path)
+            //                   .AddJsonFile("appsettings.json", optional: false);
+
+            //_configurationRoot = builder.Build();
+
+            ServiceCollection services = new ServiceCollection();
+            services.RegisterAutomapper();
+            services.RegisterInterfaces();
+            services.ConfigureServices();
+            services.RegisterSerilog();
+            services.RegisterSQLiteRepositories();
+            services.RegisterApiServices();
+            services.RegisterValidation();
+            services.RegisterViewModels();
+            services.RegisterReports();
+
+            AppEssential.InitializeServiceProvider(services.BuildServiceProvider());
+
         }
 
         
@@ -60,7 +88,7 @@ namespace Freedom.Desktop
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(ShellPage), e.Arguments);
                 }
 
                 // Ensure the current window is active

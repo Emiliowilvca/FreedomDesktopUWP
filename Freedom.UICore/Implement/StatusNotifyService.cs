@@ -24,7 +24,7 @@ namespace Freedom.UICore.Implement
         public StatusNotifyService(IStatusNavigateService statusNavigateService)
         {
             _statusNavigateService = statusNavigateService;
-            _delayNotify = (int)Application.Current.Resources[_notifyDelayTime];
+            _delayNotify = 2000; //(int)Application.Current.Resources[_notifyDelayTime];
         }
 
         public async void ShowError(string message)

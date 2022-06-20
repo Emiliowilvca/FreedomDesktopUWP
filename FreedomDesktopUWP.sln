@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freedom.Core", "Freedom.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freedom.UICore", "Freedom.UICore\Freedom.UICore.csproj", "{56668BAD-D0D1-4AE2-AEC2-C3B97529BD79}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Print", "Print", "{30A5926B-FAB6-4005-829A-50C6AD3A0B7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4CF0DB1B-F6A4-4B5B-8B40-E2EAF7B8D536}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{E9F80623-6FC5-4E98-BAD8-12D533E3F1C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -118,6 +124,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC9A1BE7-25F5-4900-9852-B15A0B5BA96A} = {E9F80623-6FC5-4E98-BAD8-12D533E3F1C5}
+		{0734F6F6-9819-4F67-A4CB-F1F501EB9886} = {30A5926B-FAB6-4005-829A-50C6AD3A0B7E}
+		{F07307B2-93FD-488C-B73E-7DBC5F9ABE4C} = {4CF0DB1B-F6A4-4B5B-8B40-E2EAF7B8D536}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2DF9D638-CD00-4712-A436-EE21B3DD0524}

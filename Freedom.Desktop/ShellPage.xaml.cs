@@ -1,5 +1,6 @@
-﻿using Freedom.UICore.BaseClass;
-using Freedom.UICore.ViewModels.ShellViews;
+﻿using Freedom.UICore;
+using Freedom.UICore.Interface;
+using Freedom.UICore.Views.ShellViews;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -18,21 +19,22 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Freedom.UICore.Views.ShellViews
+namespace Freedom.Desktop
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class LoginPage : Page, IViewModel<LoginViewModel>
+    public sealed partial class ShellPage : Page
     {
-        public LoginPage()
+        public ShellPage()
         {
             this.InitializeComponent();
 
-            ViewModel = AppEssential.ServiceProvider.GetRequiredService<LoginViewModel>();
-            
-        }
+            IShellNavigationService shellNavigationService = AppEssential.ServiceProvider.GetRequiredService<IShellNavigationService>();
 
-        public LoginViewModel ViewModel { get; set; }
+            shellNavigationService.Initialize(this.ShellFrame);
+            shellNavigationService.Navigate<LoginPage>();
+
+        }
     }
 }

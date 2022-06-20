@@ -179,12 +179,19 @@
     <Compile Include="Models\StatusBarItem.cs" />
     <Compile Include="Models\ViewData.cs" />
     <Compile Include="Models\ViewItems.cs" />
-    <Compile Include="ProgramWinUI.cs" />
+    <Compile Include="ProgramUICore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendingMessages\NavigationMessage.cs" />
     <Compile Include="SendingMessages\VMSendMessage.cs" />
+    <Compile Include="ViewModels\ShellViews\LoginViewModel.cs" />
+    <Compile Include="Views\ShellViews\ConfirmEmailPage.xaml.cs">
+      <DependentUpon>ConfirmEmailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShellViews\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShellViews\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StatusBarViews\StatusBarNotifyPage.xaml.cs">
       <DependentUpon>StatusBarNotifyPage.xaml</DependentUpon>
@@ -294,7 +301,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\ShellViews\ConfirmEmailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ShellViews\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShellViews\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

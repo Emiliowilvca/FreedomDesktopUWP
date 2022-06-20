@@ -2,13 +2,42 @@
     x:Class="Freedom.Desktop.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:lg="using:Freedom.Utility.Langs"
+    xmlns:cv="using:Microsoft.Toolkit.Uwp.UI.Converters"
+    xmlns:converters="using:Freedom.UICore.Converters"
     xmlns:local="using:Freedom.Desktop">
 
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources  xmlns="using:Microsoft.UI.Xaml.Controls" />
+
+                <ResourceDictionary Source="ms-appx:///Freedom.UICore/ResourceDictionaries/GlobalValues.xaml" />
+                <ResourceDictionary Source="ms-appx:///Freedom.UICore/ResourceDictionaries/ThemeWinUI.xaml" />
+                <ResourceDictionary Source="ms-appx:///Freedom.UICore/ResourceDictionaries/ImageResourceDictionary.xaml" />
+                <ResourceDictionary Source="ms-appx:///Freedom.UICore/ResourceDictionaries/FontIconStyle.xaml" />
+                <ResourceDictionary Source="ms-appx:///Freedom.UICore/ResourceDictionaries/TextBlockStyle.xaml" />
+                <ResourceDictionary Source="ms-appx:///Freedom.UICore/ResourceDictionaries/LoadingStyle.xaml" />
+                <ResourceDictionary Source="ms-appx:///Freedom.UICore/ResourceDictionaries/ProgressStyle.xaml" />
+                <ResourceDictionary Source="ms-appx:///Freedom.UICore/ResourceDictionaries/StackPanelStyle.xaml" />
+                <ResourceDictionary Source="ms-appx:///Freedom.UICore/ResourceDictionaries/ButtonStyle.xaml" />
+                <ResourceDictionary Source="ms-appx:///Freedom.UICore/ResourceDictionaries/TextboxStyle.xaml" />
+
+
             </ResourceDictionary.MergedDictionaries>
+            <!-- Other app resources here -->
+            <FontFamily x:Key="MaterialDesignIcons">ms-appx:///ResourceCore/Fonts/materialdesignicons-webfont.ttf#Material Design Icons</FontFamily>
+            <cv:BoolToVisibilityConverter x:Key="boolvisibilityConverter"/>
+            <cv:BoolNegationConverter x:Key="inverseBoolConverter"/>
+            <converters:NullToZeroConverter x:Key="NullToZeroConverters" />
+            <cv:FormatStringConverter x:Key="formatStringConverter"/>            
+            <converters:ToDateTimeOffsetConverter x:Key="toDateTimeOffsetConverter"/>
+            <converters:DecimalToDoubleConverter x:Key="decimalToDoubleConverter"/>
+            <converters:DecimalToByteConverter x:Key="decimalToByteConverter"/>
+            <converters:StringFormatConverter x:Key="stringFormatConverter"/>
+            <converters:CustomStringFormatConverter x:Key="customStringFormatConverter"/>
+            <converters:DatetimeToShortDateConverter x:Key="datetimeToShortDateConverter"/>
+
         </ResourceDictionary>
     </Application.Resources> 
 </Application>

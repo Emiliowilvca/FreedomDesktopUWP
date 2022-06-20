@@ -20,6 +20,7 @@ using Freedom.Frontend.ValidationBind;
 //using Freedom.Report.ReportInterface;
 using Freedom.UICore.Implement;
 using Freedom.UICore.Interface;
+using Freedom.UICore.ViewModels.ShellViews;
 //using Freedom.UICore.ViewModels.AccountViews;
 //using Freedom.UICore.ViewModels.BankViews;
 //using Freedom.UICore.ViewModels.CarrierViews;
@@ -65,13 +66,13 @@ using System.Threading;
 
 namespace Freedom.UICore
 {
-    public static class ProgramWinUI
+    public static class ProgramUICore
     {
         public static void RegisterInterfaces(this IServiceCollection services)
         {
             Assembly[] ViewsAssemblies = Thread.GetDomain().GetAssemblies()
                     .Where(x => x.GetName().Name == "Freedom.UICore" ||
-                               x.GetName().Name == "Freedom.WinUI3").ToArray();
+                               x.GetName().Name == "Freedom.Desktop").ToArray();
 
             services.AddSingleton<INavigationService>(new NavigationService(ViewsAssemblies));
             services.AddSingleton<IReloadService, ReloadService>();
@@ -95,11 +96,10 @@ namespace Freedom.UICore
         public static void ConfigureServices(this IServiceCollection services)
         {
             //AppEssential.Configuration = new ConfigurationBuilder()
-            //    .SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
-                
-            //    .AddJsonFile("appsettings.json", false)
-            //    .Build();
-            services.AddSingleton<IConfigurationRoot>(AppEssential.Configuration);
+            //    .SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)                
+            // .AddJsonFile("appsettings.json", false)
+            // .Build();
+            // services.AddSingleton<IConfigurationRoot>(AppEssential.Configuration);
             //var ssssdd = AppEssential.Configuration.GetValue<string>("MyValues:value1") as string;
         }
 
@@ -337,7 +337,7 @@ namespace Freedom.UICore
             //services.AddTransient<JobSectorSearchViewModel>();
             //services.AddTransient<JobSectorViewModel>();
             //services.AddTransient<KardexReportViewModel>();
-            //services.AddTransient<LoginViewModel>();
+            services.AddTransient<LoginViewModel>();
             //services.AddTransient<MainPageViewModel>();
             //services.AddTransient<MainWindowViewModel>();
             //services.AddTransient<MeasureSearchViewModel>();
