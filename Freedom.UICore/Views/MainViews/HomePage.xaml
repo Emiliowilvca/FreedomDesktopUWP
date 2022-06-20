@@ -1,0 +1,189 @@
+﻿<Page
+    x:Class="Freedom.UICore.Views.MainViews.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Freedom.UICore.Views.MainViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ico="using:Freedom.Frontend.FontIcons"
+    xmlns:lg="using:Freedom.Utility.Langs"
+    mc:Ignorable="d"
+     xmlns:mx="using:Microsoft.UI.Xaml.Controls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Resources>
+            <!--< theme ThemeShadow x:Key="SharedShadow" />-->
+            
+            <Style x:Key="HomeIconStyle" TargetType="FontIcon"  >
+                <Setter Property="FontFamily" Value="{StaticResource MaterialDesignIcons}"/>
+                <Setter Property="FontSize" Value="{StaticResource HomePage.IconSize}"/>
+                <Setter Property="Foreground" Value="{ThemeResource ColorPrimary}"/>
+                <Setter Property="FontWeight" Value="ExtraLight"/>
+                <Setter Property="Margin" Value="0"/>
+            </Style>
+            <Style x:Key="HomeHyperbutton" TargetType="HyperlinkButton">
+                <Setter Property="FontSize" Value="{StaticResource HomePage.FontSizeDetail}"/>
+                <Setter Property="Foreground" Value="{ThemeResource ColorAccent}"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+
+            </Style>
+            <Style x:Key="IconContainer" TargetType="StackPanel">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="BorderBrush" Value="{ThemeResource ColorSecondaryDark1}"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Width" Value="100"/>
+                <!--<Setter Property="Shadow" Value="{StaticResource SharedShadow}"/>-->
+            </Style>
+
+           
+
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.0*"/>
+            <RowDefinition Height="1*"/>            
+        </Grid.RowDefinitions>
+
+        <!--Header -->
+        <Border Grid.Row="0" Background="{ThemeResource ColorHomePageHeaderBackcolor}"  >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                
+                <StackPanel Grid.Column="0" 
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Center">
+                    <TextBlock Text="{StaticResource App.Name}" 
+                               FontSize="45"  
+                               FontWeight="Bold"
+                               HorizontalAlignment="Center"
+                                 Foreground="{ThemeResource ColorTextPrimary}" />
+                    <TextBlock Text="{StaticResource App.Description}" 
+                               TextWrapping="Wrap"
+                               HorizontalAlignment="Center"
+                               FontSize="33"  
+                               FontWeight="Bold"  
+                               Foreground="{ThemeResource ColorTextDisable}"/>
+                    <TextBlock Text="Enhance Your Project Management Process And Build Stronger Client Relationships. Manage Client Projects, Deliverables, and Communications In One Place."
+                                TextWrapping="Wrap"
+                               Margin="10 25 10 0"
+                               TextAlignment="Center"/>
+
+                </StackPanel>
+
+                <Grid Grid.Column="1" >
+                    <Image Source="{StaticResource HomeLogo}"  
+                           Stretch="Uniform" />
+                </Grid>
+
+
+            </Grid>
+            
+        </Border>
+        
+        <!--Foot -->
+        <Grid Grid.Row="1" >
+            <ScrollViewer >
+
+                <VariableSizedWrapGrid ItemHeight="150"  
+                                       Orientation="Horizontal"
+                                       VerticalAlignment="Center"
+                                       ItemWidth="170"  >
+
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.CartVariant}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Sales}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.TruckDeliveryOutline}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Purchase}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.AccountMultiple}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Customer}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.AccountHardHat}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Employee}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.PackageVariant}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Inventory}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.LightbulbOnOutline}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Product}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+                    
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.BankOutline}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Bank}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.Store}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Shop}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.Food}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Production}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.Tools}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Service}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.Transfer}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Transfers}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource IconContainer}" >
+                        <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.Finance}"
+                                  Style="{StaticResource HomeIconStyle}" />
+                        <HyperlinkButton Content="{x:Bind lg:Lang.Report}"
+                                         Style="{StaticResource HomeHyperbutton}" />
+                    </StackPanel>
+
+                </VariableSizedWrapGrid>
+                 
+            </ScrollViewer>
+            
+            
+        </Grid>
+         
+    </Grid>
+</Page>

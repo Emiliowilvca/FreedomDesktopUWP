@@ -3,9 +3,10 @@ using Freedom.Frontend.FontIcons;
 using Freedom.UICore.BaseClass;
 using Freedom.UICore.Interface;
 using Freedom.UICore.Models;
+using Freedom.UICore.Views.MainViews;
 using Freedom.Utility;
 using Freedom.Utility.Langs;
-//using Microsoft.UI.Xaml.Controls;
+ 
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -111,7 +112,7 @@ namespace Freedom.UICore.ViewModels.ShellViews
                 PageTitle.SetTitle(pageTitle.Title, pageTitle.Glyph, pageTitle.IsVisible);
             };
             PageTitle.IsVisible = false;
-            //_navigationService.NavigateTo(nameof(HomePage), "");
+            _navigationService.NavigateTo(nameof(HomePage), "");
 
             //_statusNavigateService.Navigate(nameof(StatusBarInfoPage));
 
@@ -301,7 +302,6 @@ namespace Freedom.UICore.ViewModels.ShellViews
                     MenuAutosuggestCollection.Add("No Results!!");
                     return;
                 }
-
                 MenuAutosuggestCollection.AddRange(collection);
             }
         }

@@ -20,6 +20,7 @@ using Freedom.Frontend.ValidationBind;
 //using Freedom.Report.ReportInterface;
 using Freedom.UICore.Implement;
 using Freedom.UICore.Interface;
+using Freedom.UICore.ViewModels.MainViews;
 using Freedom.UICore.ViewModels.ShellViews;
 //using Freedom.UICore.ViewModels.AccountViews;
 //using Freedom.UICore.ViewModels.BankViews;
@@ -328,7 +329,7 @@ namespace Freedom.UICore
             //services.AddTransient<FeesGeneratorViewModel>();
             //services.AddTransient<GroupSearchViewModel>();
             //services.AddTransient<GroupViewModel>();
-            //services.AddTransient<HomeViewModel>();
+            services.AddTransient<HomeViewModel>();
             //services.AddTransient<InventoryReportViewModel>();
             //services.AddTransient<InventoryViewModel>();
             //services.AddTransient<JobPostSearchViewModel>();

@@ -16,7 +16,7 @@ namespace Freedom.UICore.Views.ShellViews
 
 
             var nav = AppEssential.ServiceProvider.GetRequiredService<INavigationService>();
-         //   nav.InitializeNavigationContainer(this.ContentFrame);
+            nav.InitializeNavigationContainer(this.ContentFrame);
 
             var statusNavigateService = AppEssential.ServiceProvider.GetRequiredService<IStatusNavigateService>();
          //   statusNavigateService.InitializeStatusBar(this.StatusBarFrame);
