@@ -5,15 +5,15 @@ using Windows.UI.Xaml.Controls;
 
 namespace Freedom.UICore.Views.ShellViews
 {
-    public sealed partial class LoginPage : Page, IViewModel<LoginViewModel>
+    public sealed partial class NewUserPage : Page, IViewModel<NewUserViewModel>
     {
-        public LoginPage()
+        public NewUserPage()
         {
             this.InitializeComponent();
 
-            ViewModel = AppEssential.ServiceProvider.GetRequiredService<LoginViewModel>();
+            ViewModel = AppEssential.ServiceProvider.GetRequiredService<NewUserViewModel>();
         }
 
-        public LoginViewModel ViewModel { get; set; }
+        public NewUserViewModel ViewModel { get; set; }
     }
 }

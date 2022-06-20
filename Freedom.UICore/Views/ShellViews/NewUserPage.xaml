@@ -1,0 +1,266 @@
+﻿<Page
+    x:Class="Freedom.UICore.Views.ShellViews.NewUserPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Freedom.UICore.Views.ShellViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:ico="using:Freedom.Frontend.FontIcons"
+    xmlns:lg="using:Freedom.Utility.Langs"
+    xmlns:ct="using:Freedom.UICore.Controls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="{StaticResource LoginAbstracBackground}" Stretch="Fill" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="1" Grid.Row="1"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                BorderBrush="{ThemeResource ColorSecondaryDark3}"
+                BorderThickness="1"
+                CornerRadius="7">
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0">
+                    <Border.Background>
+                        <ImageBrush ImageSource="{StaticResource RegisterNewUser}" Stretch="Fill" />
+                    </Border.Background>
+                </Border>
+                <Grid Grid.Column="1">
+                    <ScrollViewer>
+                        <StackPanel Margin="20 0">
+                            <!--Title-->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <!--Logo-->
+                                <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.AccountSupervisorCircle}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SuperText}"/>
+                                <!--Title-->
+                                <TextBlock Text="{x:Bind lg:Lang.RegisterNewUser}"
+                                       FontSize="{StaticResource FontSize.Title}"
+                                       HorizontalAlignment="Center"
+                                       Margin="10 0" />
+                            </StackPanel>
+                            <!--UserName-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0"  
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.Account}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <TextBox Grid.Column="1" 
+                                         PlaceholderText="{x:Bind lg:Lang.Name}"
+                                         IsEnabled="{x:Bind ViewModel.EnableControl}"
+                                         CharacterCasing="Upper"
+                                         Margin="3 0 0 0"/>
+                            </Grid>
+                            <!--Email-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0"  
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.Email}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <TextBox Grid.Column="1"  
+                                         PlaceholderText="{x:Bind lg:Lang.Email}"
+                                         IsEnabled="{x:Bind ViewModel.EnableControl}"
+                                         CharacterCasing="Upper"
+                                         Margin="3 0 0 0" />
+                            </Grid>
+                            <!--Address-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0"  
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.MapMarker}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <TextBox Grid.Column="1" 
+                                         PlaceholderText="{x:Bind lg:Lang.Address}"
+                                         IsEnabled="{x:Bind ViewModel.EnableControl}"
+                                         CharacterCasing="Upper"
+                                         Margin="3 0 0 0" />
+                            </Grid>
+                            <!--Phone-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0"  
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.Phone}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <TextBox Grid.Column="1"   
+                                         PlaceholderText="{x:Bind lg:Lang.UserPhoneNumber}"
+                                         IsEnabled="{x:Bind ViewModel.EnableControl}"
+                                         Margin="3 0 0 0" />
+                            </Grid>
+                            <!--Document-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0"  
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.CardAccountDetailsOutline}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <TextBox Grid.Column="1" 
+                                         PlaceholderText="{x:Bind lg:Lang.DocNumber}"
+                                         IsEnabled="{x:Bind ViewModel.EnableControl}"
+                                         Margin="3 0 0 0" />
+                            </Grid>
+                            <!--Company-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0"  
+                                           
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.HomeCity}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <ComboBox Grid.Column="1" 
+                                          PlaceholderText="{x:Bind lg:Lang.Company}"
+                                          HorizontalAlignment="Stretch"
+                                          Margin="3 0 0 0"/>
+                            </Grid>
+                            <!--Country-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0"  
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.Flag}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <ComboBox Grid.Column="1"  
+                                          PlaceholderText="{x:Bind lg:Lang.Country}"
+                                           HorizontalAlignment="Stretch"
+                                          IsEnabled="{x:Bind ViewModel.EnableControl}"
+                                          Margin="3 0 0 0"/>
+                            </Grid>
+                            <!--State-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0" 
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.FileImageMarker}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <ComboBox Grid.Column="1" 
+                                          PlaceholderText="{x:Bind lg:Lang.State}"
+                                          IsEnabled="{x:Bind ViewModel.EnableControl}"
+                                           HorizontalAlignment="Stretch"
+                                          Margin="3 0 0 0"/>
+                            </Grid>
+                            <!--City-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0"  
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.City}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <ComboBox Grid.Column="1"  
+                                          PlaceholderText="{x:Bind lg:Lang.City}"
+                                          IsEnabled="{x:Bind ViewModel.EnableControl}"
+                                           HorizontalAlignment="Stretch"
+                                          Margin="3 0 0 0"/>
+                            </Grid>
+                            <!--Password-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0"  
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.AccountKey}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <PasswordBox Grid.Column="1"  
+                                             PlaceholderText="{x:Bind lg:Lang.Password}"
+                                             IsEnabled="{x:Bind ViewModel.EnableControl}"
+                                             HorizontalAlignment="Stretch"
+                                             Margin="3 0 0 0"/>
+                            </Grid>
+                            <!--ConfirmPassword-->
+                            <Grid ct:GridPlus.ColumnDefinitions="Auto, *" Margin="0 5 0 0">
+                                <FontIcon Grid.Column="0"  
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.AccountKeyOutline}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource ColorAccentDark1}"
+                                          FontSize="{StaticResource FontIconSize.SubTitle }"/>
+                                <PasswordBox Grid.Column="1"  
+                                             PlaceholderText="{x:Bind lg:Lang.ConfirmPassword}"
+                                             IsEnabled="{x:Bind ViewModel.EnableControl}"
+                                             HorizontalAlignment="Stretch"
+                                             Margin="3 0 0 0"/>
+                            </Grid>
+                            <Grid ct:GridPlus.ColumnDefinitions="*, *, *"  
+                                  Margin="0 10 0 0" ColumnSpacing="3" >
+                                <!--GoBack Button-->
+                                <Button Grid.Column="0" 
+                                        HorizontalAlignment="Stretch"
+                                        Command="{x:Bind ViewModel.GoBackCommand}">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                              Glyph="{x:Bind ico:MaterialDesignIcons.ArrowLeft}" />
+                                        <TextBlock Text="{x:Bind lg:Lang.GoBack}"
+                                               FontSize="{StaticResource FontSize.Body}"
+                                               Margin="5 0" />
+                                    </StackPanel>
+                                </Button>
+                                <!--cancel-->
+                                <Button Grid.Column="1"  
+                                        HorizontalAlignment="Stretch"
+                                        Command="{x:Bind ViewModel.RegisterUserCommand}">
+                                    <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                        <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                                  Glyph="{x:Bind ico:MaterialDesignIcons.AccountCancel}" />
+                                        <TextBlock Text="{x:Bind lg:Lang.Cancel}"
+                                                   FontSize="{StaticResource FontSize.Body}"
+                                                   Margin="5 0" />
+                                    </StackPanel>
+                                </Button>
+                                <!-- new user-->
+                                <Button Grid.Column="2" 
+                                        HorizontalAlignment="Stretch"
+                                        Command="{x:Bind ViewModel.RegisterUserCommand}">
+                                    <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                        <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                              Glyph="{x:Bind ico:MaterialDesignIcons.AccountPlus}" />
+                                        <TextBlock Text="{x:Bind lg:Lang.CreateNew}"
+                                               FontSize="{StaticResource FontSize.Body}"
+                                               Margin="5 0" />
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                            <StackPanel Margin="0 5">
+                                <!--acept-->
+                                <Button HorizontalAlignment="Stretch"
+                                        Command="{x:Bind ViewModel.RegisterUserCommand}"
+                                        Style="{StaticResource AccentButtonStyle}">
+                                    <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                        <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                                  Glyph="{x:Bind ico:MaterialDesignIcons.AccountCheck}" />
+                                        <TextBlock Text="{x:Bind lg:Lang.Save}"
+                                                   FontSize="{StaticResource FontSize.Body}"
+                                                   Margin="5 0" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

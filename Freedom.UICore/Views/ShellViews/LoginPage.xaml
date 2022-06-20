@@ -6,13 +6,169 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:ico="using:Freedom.Frontend.FontIcons"
+    xmlns:cc="using:Freedom.UICore.Controls"
+    xmlns:lg="using:Freedom.Utility.Langs"  
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
     <Grid>
-        <StackPanel>
-            <TextBlock Text="this is a login Page"/>
-            <Button Content=" go to master page" Height="35" Width="120"
-                    Command="{x:Bind ViewModel.navigateCommand}"/>
-        </StackPanel>
+        <Grid cc:GridPlus.ColumnDefinitions="*, 3*, *"
+              cc:GridPlus.RowDefinitions="*, 4*, *">
+            <Grid.Background>
+                <ImageBrush ImageSource="{StaticResource LoginAbstracBackground}" Stretch="Fill" />
+            </Grid.Background>
+            <Border Grid.Column="1" Grid.Row="1"
+                     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                    BorderBrush="{StaticResource ColorSecondaryLight1}"
+                    BorderThickness="1"
+                    CornerRadius="7">
+                <Grid cc:GridPlus.ColumnDefinitions="*, *">
+                    <Border Grid.Column="0">
+                        <Border.Background>
+                            <ImageBrush ImageSource="{StaticResource LoginVector}" Stretch="Fill" />
+                        </Border.Background>
+                    </Border>
+                    <Grid Grid.Column="1">
+                        <ScrollViewer>
+                            <StackPanel>
+                                <muxc:ProgressBar Style="{StaticResource ProgressBarStyle}" Height="15" IsIndeterminate="True"
+                                             Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
+                                <!--Logo-->
+                                <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.AccountCircle}"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Foreground="{StaticResource SystemAccentColorDark1}"
+                                          FontSize="85"
+                                          HorizontalAlignment="Center"
+                                          Margin="0 5 0 0" />
+                                <!--Title-->
+                                <TextBlock Text="{x:Bind lg:Lang.Login}"
+                                           FontSize="{StaticResource FontSize.Title}"
+                                           HorizontalAlignment="Center"
+                                           Margin="0 10 0 0" />
+                                <!--Email-->
+                                <Grid Margin="35 20 35 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <FontIcon Grid.Column="0"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.Email}"
+                                          Foreground="{StaticResource SystemAccentColorDark1}"
+                                          FontSize="20"
+                                          HorizontalAlignment="Left" />
+                                    <AutoSuggestBox Grid.Column="1"
+                                                    Name="AutoSuggestBoxEmail"
+                                                    PlaceholderText="{x:Bind lg:Lang.UserEmail}"
+                                                    ItemsSource="{x:Bind ViewModel.UserEmailCollection}"
+                                                    Text="{x:Bind ViewModel.LoginBind.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                    Margin="2 0 0 0" />
+                                </Grid>
+                                <!--Password-->
+                                <Grid Margin="35 25 35 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <FontIcon Grid.Column="0"
+                                          FontFamily="{StaticResource MaterialDesignIcons}"
+                                          Glyph="{x:Bind ico:MaterialDesignIcons.Lock}"
+                                          Foreground="{StaticResource SystemAccentColorDark1}"
+                                          FontSize="20"
+                                          HorizontalAlignment="Left" />
+                                    <PasswordBox Grid.Column="1"
+                                                 PlaceholderText="{x:Bind lg:Lang.Password}"
+                                                 Password ="{x:Bind ViewModel.LoginBind.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                 Margin="2 0 0 0" />
+                                </Grid>
+                                <!--Remenber page-->
+                                <Grid Margin="60 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Grid.Column="0"
+                                              Content="{x:Bind lg:Lang.RememberMe}"
+                                              IsChecked="{x:Bind ViewModel.LoginBind.Rememberme,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <HyperlinkButton Grid.Column="1"
+                                                     Content="{x:Bind lg:Lang.RecoverPassword}"
+                                                     Command="{x:Bind ViewModel.RecoverPasswordCommand}" />
+                                </Grid>
+                                <!--LoginButton-->
+                                <Button HorizontalAlignment="Center"
+                                        Margin="0 20 0 0"
+                                        Width="250" Command="{x:Bind ViewModel.LoginCommand}"
+                                        Style="{StaticResource AccentButtonStyle}"
+                                        IsEnabled="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                                  Glyph="{x:Bind ico:MaterialDesignIcons.Login}" />
+                                        <TextBlock Text="{x:Bind lg:Lang.Login}"
+                                                   FontSize="{StaticResource FontSize.Body}"
+                                                   Margin="5 0" />
+                                    </StackPanel>
+                                </Button>
+                                <!--Registe New User -->
+                                <HyperlinkButton Content="{x:Bind lg:Lang.RegisterNewUser}"
+                                                 Command="{x:Bind ViewModel.NewUserCommand}"
+                                                 HorizontalAlignment="Center"
+                                                 Margin="0 20 0 0" />
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <!--Url Base-->
+                                    <HyperlinkButton Margin="0 28 0 0"
+                                                     ToolTipService.ToolTip="{x:Bind lg:Lang.ConfigureConnection}"
+                                                     Command="{x:Bind ViewModel.UrlBaseCommand}">
+                                        <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                                  HorizontalAlignment="Left"
+                                                  Glyph="{x:Bind ico:MaterialDesignIcons.Web}"
+                                                  FontSize="{StaticResource FontIconSize.SubTitle}" />
+                                    </HyperlinkButton>
+                                    <!--facebook-->
+                                    <HyperlinkButton Margin="0 28 0 0"
+                                                     ToolTipService.ToolTip="Facebook">
+                                        <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                                  HorizontalAlignment="Left"
+                                                  Glyph="{x:Bind ico:MaterialDesignIcons.Facebook}"
+                                                  FontSize="{StaticResource FontIconSize.SubTitle}" />
+                                    </HyperlinkButton>
+                                    <!--instagram-->
+                                    <HyperlinkButton Margin="0 28 0 0"
+                                                     ToolTipService.ToolTip="Instagram">
+                                        <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                                  HorizontalAlignment="Left"
+                                                  Glyph="{x:Bind ico:MaterialDesignIcons.Instagram}"
+                                                  FontSize="{StaticResource FontIconSize.SubTitle}" />
+                                    </HyperlinkButton>
+
+                                    <!--google-->
+                                    <HyperlinkButton Margin="0 28 0 0"
+                                                     ToolTipService.ToolTip="Google">
+                                        <FontIcon FontFamily="{StaticResource MaterialDesignIcons}"
+                                                  HorizontalAlignment="Left"
+                                                  Glyph="{x:Bind ico:MaterialDesignIcons.Google}"
+                                                  FontSize="{StaticResource FontIconSize.SubTitle}" />
+                                    </HyperlinkButton>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </Page>
+
+<!--<cc:Loading x:Name="LoadingControl"
+                Style="{StaticResource LoadingStyle}"
+                IsLoading="{x:Bind ViewModel.IsBusy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+    var resp = await _messageService.ShowMessageConfirmation("Confirmar acreditado a tu cuenta la suma de $100000", "Informe de Banco");
+
+    if (resp == ContentDialogResult.Primary)
+    {
+
+    }
+
+    -->

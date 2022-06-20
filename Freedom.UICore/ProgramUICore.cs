@@ -79,7 +79,6 @@ namespace Freedom.UICore
             services.AddSingleton<IShellNavigationService>(new ShellNavigationService(ViewsAssemblies));
             services.AddSingleton<IStatusNavigateService>(new StatusNavigateService(ViewsAssemblies));
             services.AddSingleton<IVariableService, VariableService>();
-
             services.AddScoped<IDeviceInfoService, DeviceInfoService>();
             services.AddScoped<IEncryption, Encryption>();
             services.AddScoped<IFindResourcesService, FindResourceService>();
@@ -307,7 +306,7 @@ namespace Freedom.UICore
             //services.AddTransient<CityViewModel>();
             //services.AddTransient<CompanySearchViewModel>();
             //services.AddTransient<CompanyViewModel>();
-            //services.AddTransient<ConfirmEmailViewModel>();
+            services.AddTransient<ConfirmEmailViewModel>();
             //services.AddTransient<ConsumptionViewModel>();
             //services.AddTransient<CountrySearchViewModel>();
             //services.AddTransient<CountryViewModel>();
@@ -338,14 +337,14 @@ namespace Freedom.UICore
             //services.AddTransient<JobSectorViewModel>();
             //services.AddTransient<KardexReportViewModel>();
             services.AddTransient<LoginViewModel>();
-            //services.AddTransient<MainPageViewModel>();
+            services.AddTransient<MainPageViewModel>();
             //services.AddTransient<MainWindowViewModel>();
             //services.AddTransient<MeasureSearchViewModel>();
             //services.AddTransient<MeasureViewModel>();
             //services.AddTransient<MoneyDenominationViewModel>();
             //services.AddTransient<MoneySearchViewModel>();
             //services.AddTransient<MoneyViewModel>();
-            //services.AddTransient<NewUserViewModel>();
+            services.AddTransient<NewUserViewModel>();
             //services.AddTransient<OperationTypeSearchViewModel>();
             //services.AddTransient<OperationTypeViewModel>();
             //services.AddTransient<OrderNotDeliveredViewModel>();
@@ -372,7 +371,7 @@ namespace Freedom.UICore
             //services.AddTransient<PurchaseWithholdingTaxViewModel>();
             //services.AddTransient<ReasonReturnSearchViewModel>();
             //services.AddTransient<ReasonReturnViewModel>();
-            //services.AddTransient<RecoverPasswordViewModel>();
+            services.AddTransient<RecoverPasswordViewModel>();
             //services.AddTransient<ReturnPurchaseViewModel>();
             //services.AddTransient<RouteSearchViewModel>();
             //services.AddTransient<RouteViewModel>();
@@ -398,7 +397,7 @@ namespace Freedom.UICore
             //services.AddTransient<TownViewModel>();
             //services.AddTransient<TransferProductViewModel>();
             //services.AddTransient<TransferReportViewModel>();
-            //services.AddTransient<UrlBaseViewModel>();
+            services.AddTransient<UrlBaseViewModel>();
             //services.AddTransient<VehicleSearchViewModel>();
             //services.AddTransient<VehicleViewModel>();
             //services.AddTransient<WayAdminSearchViewModel>();

@@ -1,30 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Freedom.UICore.BaseClass;
+using Freedom.UICore.Interface;
+using Freedom.UICore.ViewModels.ShellViews;
+using Microsoft.Extensions.DependencyInjection;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Freedom.UICore.Views.ShellViews
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage : Page, IViewModel<MainPageViewModel>
     {
         public MainPage()
         {
             this.InitializeComponent();
+            ViewModel = AppEssential.ServiceProvider.GetRequiredService<MainPageViewModel>();
+
+
+
+            var nav = AppEssential.ServiceProvider.GetRequiredService<INavigationService>();
+         //   nav.InitializeNavigationContainer(this.ContentFrame);
+
+            var statusNavigateService = AppEssential.ServiceProvider.GetRequiredService<IStatusNavigateService>();
+         //   statusNavigateService.InitializeStatusBar(this.StatusBarFrame);
+
+        }
+
+        public MainPageViewModel ViewModel { get; set; }
+
+        private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            ViewModel.AutoSuggestBox_TextChanged(sender, args);
         }
     }
 }

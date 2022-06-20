@@ -5,13 +5,170 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:ico="using:Freedom.Frontend.FontIcons"
+    xmlns:models="using:Freedom.UICore.Models"
+    xmlns:lg="using:Freedom.Utility.Langs"
+    xmlns:ui="using:Freedom.UICore.Behaviors"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <!--    ==========================================================================================
+                          MAIN-PAGE SUB-NAVIGATION CONTAINER
+            ==========================================================================================
+    -->
     <Grid>
+        <Grid.Resources>
+            <!-- NAVIGATION ITEMS -->
+
+            <DataTemplate x:Key="MenuItemTemplate" x:DataType="models:MenuCategory">
+                <muxc:NavigationViewItem Name="{x:Bind KeyName}"
+                                    Tag="{x:Bind KeyName}"
+                                    Content="{x:Bind Name}"
+                                    MenuItemsSource="{x:Bind ChildrenMenus}" 
+                                    
+                                    
+                                    >
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="{x:Bind IconName}"
+                                  FontFamily="{StaticResource MaterialDesignIcons}"
+                                  FontSize="25" Margin="-3" />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+            </DataTemplate>
+
+            <!-- HEADER TITLE-->
+            <DataTemplate x:Key="NavigationHeaderModelTemplate"  x:DataType="models:PageTitle">
+                <Grid>
+                    <Border Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+                        <Grid  Height="50">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <FontIcon Grid.Column="1"
+                                      Glyph="{x:Bind Glyph, Mode=OneWay}"
+                                      FontSize="{StaticResource FontIconSize.SuperText}"
+                                      FontFamily="{StaticResource MaterialDesignIcons}"
+                                      Foreground="{ThemeResource ColorAccent}"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center" />
+                            <TextBlock Grid.Column="2"
+                                       Text="{x:Bind Title, Mode=OneWay}"
+                                       Style="{StaticResource Texblock.TitleStyle}"
+                                       Foreground="{ThemeResource ColorAccent}"
+                                       VerticalAlignment="Center"
+                                       Margin="10 0 0 0" />
+                        </Grid>
+                    </Border>
+                </Grid>
+            </DataTemplate>
+        </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25" />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Text="this is a navigation page" Grid.Row="0"/>
-        <Frame  x:Name="nome" Grid.Row="1" />
+
+        <!--<Grid x:Name="AppTitleBar">
+            <Image Source="{StaticResource FreedomLogo}"
+                   HorizontalAlignment="Left"
+                   Width="18" Height="18"
+                   Margin="8,0" />
+            <TextBlock x:Name="AppTitleTextBlock" Text="App title"
+                       TextWrapping="NoWrap"
+                       Style="{StaticResource CaptionTextBlockStyle}"
+                       VerticalAlignment="Center"
+                       Margin="28,0,0,0" />
+        </Grid>-->
+
+        <muxc:NavigationView x:Name="NavigationMain" Grid.Row="1"
+                        Background="{ThemeResource ColorNavigationMenuBackcolor}"
+                        MenuItemTemplate="{StaticResource MenuItemTemplate}"
+                        MenuItemsSource="{x:Bind ViewModel.MenuItemCollection, Mode=OneWay}"
+                        HeaderTemplate="{StaticResource NavigationHeaderModelTemplate}"
+                        Header="{x:Bind ViewModel.PageTitle, Mode=OneWay}"
+                        PaneDisplayMode="Auto"
+                        IsBackEnabled="{x:Bind ViewModel.BackRequestStatus, Mode=OneWay}"
+                        AlwaysShowHeader="{x:Bind ViewModel.PageTitle.IsVisible,Mode=OneWay}"
+                        PaneTitle="{StaticResource App.Name}">
+            <muxc:NavigationView.Resources>
+                <SolidColorBrush x:Key="NavigationViewTopPaneBackground" Color="Red" />
+            </muxc:NavigationView.Resources>
+
+            <i:Interaction.Behaviors>
+                <ui:EventToCommandBehavior Event="ItemInvoked"
+                                           Command="{x:Bind ViewModel.ItemInvokedCommand}"
+                                           PassArguments="True" />
+                <ui:EventToCommandBehavior Event="BackRequested"
+                                           Command="{x:Bind ViewModel.BackRequestedCommand}"
+                                           PassArguments="True" />
+                <ui:EventToCommandBehavior Event="Loaded"
+                                           Command="{x:Bind ViewModel.LoadedNavCommand}"
+                                           PassArguments="True" />
+            </i:Interaction.Behaviors>
+            <muxc:NavigationView.AutoSuggestBox>
+                <AutoSuggestBox QueryIcon ="Find"
+                                ItemsSource="{x:Bind ViewModel.MenuAutosuggestCollection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                PlaceholderText="{x:Bind lg:Lang.Search}"
+                                TextChanged="AutoSuggestBox_TextChanged">
+                    <i:Interaction.Behaviors>
+                        <ui:EventToCommandBehavior Event="QuerySubmitted"
+                                                   Command="{x:Bind ViewModel.QuerySubmittedCommand}"
+                                                   PassArguments="True" />
+                    </i:Interaction.Behaviors>
+                </AutoSuggestBox>
+            </muxc:NavigationView.AutoSuggestBox>
+            <muxc:NavigationView.PaneFooter>
+                <StackPanel x:Name="FooterStackPanel" Orientation="Vertical" Visibility="Visible">
+                    <NavigationViewItem Content="{x:Bind lg:Lang.Logout}"
+                                        Tag="Logout">
+                        <NavigationViewItem.Icon>
+                            <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.Logout}"
+                                  FontFamily="{StaticResource MaterialDesignIcons}"
+                                  FontSize="25" Margin="-3" />
+                        </NavigationViewItem.Icon>
+                        <i:Interaction.Behaviors>
+                            <ui:EventToCommandBehavior Event="Tapped"
+                                                       Command="{x:Bind ViewModel.GoBackCommand}" />
+                        </i:Interaction.Behaviors>
+                    </NavigationViewItem>
+                </StackPanel>
+            </muxc:NavigationView.PaneFooter>
+            <Frame x:Name="ContentFrame" Padding="0 0 0 0" 
+                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition>
+                            <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                <DrillInNavigationTransitionInfo />
+                            </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                        </NavigationThemeTransition>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </muxc:NavigationView>
+        <Grid Grid.Row="2"  >
+
+            <Frame x:Name="StatusBarFrame"   
+                   Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                   Padding="0 0 0 0" Height="22"
+                   HorizontalContentAlignment="Stretch"
+                   VerticalContentAlignment="Stretch"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition>
+                            <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                <DrillInNavigationTransitionInfo />
+                            </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                        </NavigationThemeTransition>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </Grid>
     </Grid>
 </Page>
