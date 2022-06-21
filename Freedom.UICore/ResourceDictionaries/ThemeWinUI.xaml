@@ -11,6 +11,7 @@
         -->
 
         <ResourceDictionary x:Key="Light">
+           
             <SolidColorBrush x:Key="ColorPrimaryDark3" Color="{StaticResource AccentColor8}" />
             <SolidColorBrush x:Key="ColorPrimaryDark2" Color="{StaticResource AccentColor7}" />
             <SolidColorBrush x:Key="ColorPrimaryDark1" Color="{StaticResource AccentColor6}" />
@@ -58,7 +59,7 @@
             DARK
             ============================================================================
         -->
-        <ResourceDictionary x:Key="Dark">
+        <ResourceDictionary x:Key="Dark">             
             <SolidColorBrush x:Key="ColorPrimaryDark3" Color="{StaticResource AccentColor8}" />
             <SolidColorBrush x:Key="ColorPrimaryDark2" Color="{StaticResource AccentColor7}" />
             <SolidColorBrush x:Key="ColorPrimaryDark1" Color="{StaticResource AccentColor6}" />

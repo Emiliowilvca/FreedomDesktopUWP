@@ -196,6 +196,7 @@
     <Compile Include="ViewModels\BankViews\BankTransfersViewModel.cs" />
     <Compile Include="ViewModels\BankViews\BankViewModel.cs" />
     <Compile Include="ViewModels\MainViews\HomeViewModel.cs" />
+    <Compile Include="ViewModels\SearchViews\BankSearchViewModel.cs" />
     <Compile Include="ViewModels\SettingViews\SettingViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\ConfirmEmailViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\LoginViewModel.cs" />
@@ -210,6 +211,9 @@
     </Compile>
     <Compile Include="Views\MainViews\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\BankSearchPage.xaml.cs">
+      <DependentUpon>BankSearchPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingViews\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
@@ -348,6 +352,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\MainViews\HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\BankSearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

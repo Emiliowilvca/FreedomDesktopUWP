@@ -2,6 +2,7 @@
 using Freedom.Utility.Langs;
 using System;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace Freedom.UICore.Implement
@@ -17,8 +18,8 @@ namespace Freedom.UICore.Implement
             dialog.CloseButtonText = "Cancel";
             dialog.DefaultButton = ContentDialogButton.Primary;
             dialog.Content = new object ();
-            //dialog.XamlRoot = AppEssential.MainWindow.Content.XamlRoot;
-            
+            dialog.XamlRoot = Window.Current.Content.XamlRoot;
+
             var result = await dialog.ShowAsync();
         }
 
@@ -28,7 +29,7 @@ namespace Freedom.UICore.Implement
             dialog.Title = title;
             dialog.CloseButtonText = Lang.Accept;
             dialog.Content = message;
-            dialog.XamlRoot = AppEssential.MainWindow.Content.XamlRoot;
+            dialog.XamlRoot = Window.Current.Content.XamlRoot;
             //add the page for customize message
             //dialog.Content = new ContentDialogContent();
             var result = await dialog.ShowAsync();
@@ -44,7 +45,8 @@ namespace Freedom.UICore.Implement
             dialog.Content = message;
             //add the page for customize message
             //dialog.Content = new ContentDialogContent();
-            dialog.XamlRoot = AppEssential.MainWindow.Content.XamlRoot;
+            dialog.XamlRoot = Window.Current.Content.XamlRoot;
+            
             
             return await dialog.ShowAsync();
         }

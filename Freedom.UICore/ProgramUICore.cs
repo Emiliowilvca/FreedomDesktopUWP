@@ -22,6 +22,7 @@ using Freedom.UICore.Implement;
 using Freedom.UICore.Interface;
 using Freedom.UICore.ViewModels.BankViews;
 using Freedom.UICore.ViewModels.MainViews;
+using Freedom.UICore.ViewModels.SearchViews;
 using Freedom.UICore.ViewModels.SettingViews;
 using Freedom.UICore.ViewModels.ShellViews;
 using Freedom.UICore.ViewModels.StatusBarViews;
@@ -289,7 +290,7 @@ namespace Freedom.UICore
             services.AddTransient<BankExtractionTypeViewModel>();
             services.AddTransient<BankExtractionViewModel>();
             services.AddTransient<BankReleaseCheckViewModel>();
-          //  services.AddTransient<BankSearchViewModel>();
+            services.AddTransient<BankSearchViewModel>();
             services.AddTransient<BankTransfersViewModel>();
             services.AddTransient<BankViewModel>();
             //services.AddTransient<BoxSearchViewModel>();
@@ -393,8 +394,8 @@ namespace Freedom.UICore
             //services.AddTransient<SourceProductViewModel>();
             //services.AddTransient<StateSearchViewModel>();
             //services.AddTransient<StateViewModel>();
-           //services.AddTransient<StatusBarInfoViewModel>();
-          //  services.AddTransient<StatusBarNotifyViewModel>();
+            services.AddTransient<StatusBarInfoViewModel>();
+            services.AddTransient<StatusBarNotifyViewModel>();
             //services.AddTransient<SubGroupSearchViewModel>();
             //services.AddTransient<SubGroupViewModel>();
             //services.AddTransient<TownSearchViewModel>();

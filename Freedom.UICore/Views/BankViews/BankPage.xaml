@@ -10,6 +10,7 @@
     xmlns:cc="using:Freedom.UICore.Controls"
     xmlns:lg="using:Freedom.Utility.Langs"       
     NavigationCacheMode="Enabled"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
         <Style TargetType="Grid" x:Name="ContainerStyle">
@@ -139,7 +140,7 @@
                                IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}" />
             </Grid>
 
-            <ProgressBar 
+            <muxc:ProgressBar 
                      Style="{StaticResource ProgressBarStyle}"
                      Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
 

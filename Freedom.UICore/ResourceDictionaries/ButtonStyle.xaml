@@ -123,7 +123,9 @@
  
     </Style>
 
-    <Style x:Key="ButtonImage.AccentStyle" TargetType="cc:ButtonPlus" BasedOn="{StaticResource AccentButtonStyle}" >
+    <Style x:Key="ButtonImage.AccentStyle" 
+           TargetType="cc:ButtonPlus" 
+           BasedOn="{StaticResource AccentButtonStyle}" >
         <Setter Property="CornerRadius" Value="5" />
         <Setter Property="FontImageSize" Value="21"/>
         <Setter Property="Height" Value="35" />

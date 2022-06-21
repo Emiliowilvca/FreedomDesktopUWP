@@ -9,6 +9,7 @@ using Freedom.Frontend.Models.BindableINFO;
 using Freedom.UICore.BaseClass;
 using Freedom.UICore.Models;
 using Freedom.UICore.SendingMessages;
+using Freedom.UICore.Views.SearchViews;
 //using Freedom.UICore.Views.SearchViews;
 using Freedom.Utility.Langs;
 using Freedom.Utility.Models.BaseEntity;
@@ -98,7 +99,7 @@ namespace Freedom.UICore.ViewModels.BankViews
                     }
                     WeakReferenceMessenger.Default.Unregister<VMSendMessage<BankINFO>, string>(this, _sendMessageToken);
                 });
-           // _navigationService.NavigateTo<BankSearchPage>(new NavigationParameter(1, _sendMessageToken.ToString()));
+            _navigationService.NavigateTo<BankSearchPage>(new NavigationParameter(1, _sendMessageToken.ToString()));
         }
 
         private async void Save()
@@ -230,7 +231,7 @@ namespace Freedom.UICore.ViewModels.BankViews
             catch (Exception ex)
             {
                 IsBusy = false;
-                _messageService.ShowMessage(ex.Message, "Load Privider");
+                _messageService.ShowMessage(ex.Message, "Load Item");
             }
             finally
             {
