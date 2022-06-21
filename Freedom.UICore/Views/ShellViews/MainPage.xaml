@@ -8,9 +8,11 @@
     xmlns:ico="using:Freedom.Frontend.FontIcons"
     xmlns:models="using:Freedom.UICore.Models"
     xmlns:lg="using:Freedom.Utility.Langs"
-    xmlns:ui="using:Freedom.UICore.Behaviors"
+   
+    xmlns:UU="using:Microsoft.Toolkit.Uwp.UI.Behaviors"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
-    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:ii="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"   
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <!--    ==========================================================================================
@@ -23,12 +25,9 @@
 
             <DataTemplate x:Key="MenuItemTemplate" x:DataType="models:MenuCategory">
                 <muxc:NavigationViewItem Name="{x:Bind KeyName}"
-                                    Tag="{x:Bind KeyName}"
-                                    Content="{x:Bind Name}"
-                                    MenuItemsSource="{x:Bind ChildrenMenus}" 
-                                    
-                                    
-                                    >
+                                        Tag="{x:Bind KeyName}"
+                                        Content="{x:Bind Name}"
+                                        MenuItemsSource="{x:Bind ChildrenMenus}" >
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon Glyph="{x:Bind IconName}"
                                   FontFamily="{StaticResource MaterialDesignIcons}"
@@ -38,7 +37,7 @@
             </DataTemplate>
 
             <!-- HEADER TITLE-->
-            <DataTemplate x:Key="NavigationHeaderModelTemplate"  x:DataType="models:PageTitle">
+            <DataTemplate x:Key="NavigationHeaderModelTemplate" x:DataType="models:PageTitle">
                 <Grid>
                     <Border Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
                         <Grid  Height="50">
@@ -93,47 +92,31 @@
                         PaneDisplayMode="Auto"
                         IsBackEnabled="{x:Bind ViewModel.BackRequestStatus, Mode=OneWay}"
                         AlwaysShowHeader="{x:Bind ViewModel.PageTitle.IsVisible,Mode=OneWay}"
-                        PaneTitle="{StaticResource App.Name}">
+                        PaneTitle="{StaticResource App.Name}" >
+                    
             <muxc:NavigationView.Resources>
-                <SolidColorBrush x:Key="NavigationViewTopPaneBackground" Color="Red" />
+                <SolidColorBrush x:Key="NavigationViewTopPaneBackground"  />
             </muxc:NavigationView.Resources>
-
-            <i:Interaction.Behaviors>
-                <ui:EventToCommandBehavior Event="ItemInvoked"
-                                           Command="{x:Bind ViewModel.ItemInvokedCommand}"
-                                           PassArguments="True" />
-                <ui:EventToCommandBehavior Event="BackRequested"
-                                           Command="{x:Bind ViewModel.BackRequestedCommand}"
-                                           PassArguments="True" />
-                <ui:EventToCommandBehavior Event="Loaded"
-                                           Command="{x:Bind ViewModel.LoadedNavCommand}"
-                                           PassArguments="True" />
-            </i:Interaction.Behaviors>
+            
             <muxc:NavigationView.AutoSuggestBox>
-                <AutoSuggestBox QueryIcon ="Find"
+                <AutoSuggestBox QueryIcon ="Find" x:Name="SuggestTextbox"
                                 ItemsSource="{x:Bind ViewModel.MenuAutosuggestCollection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                PlaceholderText="{x:Bind lg:Lang.Search}"
-                                TextChanged="AutoSuggestBox_TextChanged">
-                    <i:Interaction.Behaviors>
-                        <ui:EventToCommandBehavior Event="QuerySubmitted"
-                                                   Command="{x:Bind ViewModel.QuerySubmittedCommand}"
-                                                   PassArguments="True" />
-                    </i:Interaction.Behaviors>
+                                PlaceholderText="{x:Bind lg:Lang.Search}">
                 </AutoSuggestBox>
             </muxc:NavigationView.AutoSuggestBox>
-            <muxc:NavigationView.PaneFooter>
+            
+            
+            <muxc:NavigationView.PaneFooter >
                 <StackPanel x:Name="FooterStackPanel" Orientation="Vertical" Visibility="Visible">
-                    <NavigationViewItem Content="{x:Bind lg:Lang.Logout}"
-                                        Tag="Logout">
-                        <NavigationViewItem.Icon>
+                    <NavigationViewItem  x:Name="LogoutButton" 
+                                         Content="{x:Bind lg:Lang.Logout}" 
+                                         Tag="Logout">
+                        <NavigationViewItem.Icon >
                             <FontIcon Glyph="{x:Bind ico:MaterialDesignIcons.Logout}"
-                                  FontFamily="{StaticResource MaterialDesignIcons}"
-                                  FontSize="25" Margin="-3" />
+                                      FontFamily="{StaticResource MaterialDesignIcons}"
+                                      FontSize="25" 
+                                      Margin="-3" />
                         </NavigationViewItem.Icon>
-                        <i:Interaction.Behaviors>
-                            <ui:EventToCommandBehavior Event="Tapped"
-                                                       Command="{x:Bind ViewModel.GoBackCommand}" />
-                        </i:Interaction.Behaviors>
                     </NavigationViewItem>
                 </StackPanel>
             </muxc:NavigationView.PaneFooter>

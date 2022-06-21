@@ -13,6 +13,7 @@ namespace Freedom.UICore.Implement
 
         public NavigationService(Assembly[] viewsAssemblies) : base(viewsAssemblies)
         {
+
         }
 
         public void InitializeNavigationContainer(Frame frame)

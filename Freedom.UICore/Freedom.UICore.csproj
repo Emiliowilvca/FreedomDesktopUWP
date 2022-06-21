@@ -183,15 +183,34 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendingMessages\NavigationMessage.cs" />
     <Compile Include="SendingMessages\VMSendMessage.cs" />
+    <Compile Include="ViewModels\BankViews\BankAccountStatementViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankAccountTypeViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankAccountViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankBouncedCheckViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankCardsViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankDepositViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankExtractionReportViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankExtractionTypeViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankExtractionViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankReleaseCheckViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankTransfersViewModel.cs" />
+    <Compile Include="ViewModels\BankViews\BankViewModel.cs" />
     <Compile Include="ViewModels\MainViews\HomeViewModel.cs" />
+    <Compile Include="ViewModels\SettingViews\SettingViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\ConfirmEmailViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\MainPageViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\NewUserViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\RecoverPasswordViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\UrlBaseViewModel.cs" />
+    <Compile Include="Views\BankViews\BankPage.xaml.cs">
+      <DependentUpon>BankPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainViews\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingViews\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShellViews\ConfirmEmailPage.xaml.cs">
       <DependentUpon>ConfirmEmailPage.xaml</DependentUpon>
@@ -319,9 +338,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\BankViews\BankPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\MainViews\HomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SettingViews\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ShellViews\ConfirmEmailPage.xaml">
       <SubType>Designer</SubType>
