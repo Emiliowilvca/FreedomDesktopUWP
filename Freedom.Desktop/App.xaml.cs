@@ -26,7 +26,7 @@ namespace Freedom.Desktop
     {
 
 
-        private readonly IConfigurationRoot _configurationRoot;
+      //  private readonly IConfigurationRoot _configurationRoot;
 
 
         public App()
