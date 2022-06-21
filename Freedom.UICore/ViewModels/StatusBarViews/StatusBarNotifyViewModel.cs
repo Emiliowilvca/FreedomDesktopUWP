@@ -4,13 +4,14 @@ using Freedom.UICore.BaseClass;
 using Freedom.UICore.Models;
 using Freedom.UICore.SendingMessages;
 using Microsoft.Toolkit.Uwp.Helpers;
+using System;
 using System.Text.Json;
 using Windows.UI;
 using Windows.UI.Xaml.Media;
 
 namespace Freedom.UICore.ViewModels.StatusBarViews
 {
-    public class StatusBarNotifyViewModel : BaseViewModel/*, IRecipient<NavigationMessage>*/
+    public class StatusBarNotifyViewModel : BaseViewModel
     {
         private string _messageText;
         private string _fontIconGlyph;
@@ -19,13 +20,13 @@ namespace Freedom.UICore.ViewModels.StatusBarViews
 
         public StatusBarNotifyViewModel()
         {
+            _sendMessageToken = Guid.NewGuid().ToString();
             NotifyBackground = new SolidColorBrush(Colors.Gray);
             _fontIconGlyph = MaterialDesignIcons.InformationOutline;
-            //WeakReferenceMessenger.Default.Register<NavigationMessage>(this);
-              
-
-
+            WeakReferenceMessenger.Default.Register<NavigationMessage>(this, (r,m) => { Receive(m); } );
         }
+
+
 
         public void Receive(NavigationMessage message)
         {

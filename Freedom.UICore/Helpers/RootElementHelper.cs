@@ -36,7 +36,6 @@ namespace Freedom.UICore.Helpers
             // Confirm parent and childName are valid.
             if (parent == null)
             {
-                
                 return null;
             }
 

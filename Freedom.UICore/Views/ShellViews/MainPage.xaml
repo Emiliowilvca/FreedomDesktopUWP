@@ -103,8 +103,7 @@
                                 ItemsSource="{x:Bind ViewModel.MenuAutosuggestCollection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                 PlaceholderText="{x:Bind lg:Lang.Search}">
                 </AutoSuggestBox>
-            </muxc:NavigationView.AutoSuggestBox>
-            
+            </muxc:NavigationView.AutoSuggestBox>         
             
             <muxc:NavigationView.PaneFooter >
                 <StackPanel x:Name="FooterStackPanel" Orientation="Vertical" Visibility="Visible">
@@ -133,11 +132,11 @@
                 </Frame.ContentTransitions>
             </Frame>
         </muxc:NavigationView>
-        <Grid Grid.Row="2"  >
-
+        <Grid Grid.Row="2" >
             <Frame x:Name="StatusBarFrame"   
                    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-                   Padding="0 0 0 0" Height="22"
+                   Padding="0 0 0 0" 
+                   Height="22"
                    HorizontalContentAlignment="Stretch"
                    VerticalContentAlignment="Stretch"
                    HorizontalAlignment="Stretch"

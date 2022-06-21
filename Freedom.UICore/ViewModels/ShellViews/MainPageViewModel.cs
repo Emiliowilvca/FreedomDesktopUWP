@@ -5,22 +5,16 @@ using Freedom.UICore.Interface;
 using Freedom.UICore.Models;
 using Freedom.UICore.Views.BankViews;
 using Freedom.UICore.Views.MainViews;
-using Freedom.Utility;
-using Freedom.Utility.Langs;
- 
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Windows.UI.Xaml.Controls;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Windows.UI.Xaml;
 using Freedom.UICore.Views.SettingViews;
 using Freedom.UICore.Views.StatusBarViews;
+using Freedom.Utility;
+using Freedom.Utility.Langs;
+using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows.Input;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace Freedom.UICore.ViewModels.ShellViews
 {
@@ -32,20 +26,11 @@ namespace Freedom.UICore.ViewModels.ShellViews
             LoadMenuCategory();
             MenuAutosuggestCollection = new ObservableCollection<string>();
 
-            ItemInvokedCommand = new RelayCommand<string>(ItemInvoked);
-            BackRequestedCommand = new RelayCommand(BackRequested);
-            LoadedNavCommand = new RelayCommand(LoadedNav);
-          
+            //ItemInvokedCommand = new RelayCommand<string>(ItemInvoked);
+            //BackRequestedCommand = new RelayCommand(BackRequested);
+            //LoadedNavCommand = new RelayCommand(LoadedNav);
+
             LogoutCommand = new RelayCommand(LogoutCommandExecute);
-            
-
-        }
-
-       
-
-        private void ItemInvokedx(Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs obj)
-        {
-             
         }
 
         public override void GoBackCommandExecute()
@@ -71,13 +56,11 @@ namespace Freedom.UICore.ViewModels.ShellViews
 
         #region Commands
 
-        public ICommand LoadedNavCommand { get; private set; }
+        //public ICommand LoadedNavCommand { get; private set; }
 
-        public ICommand ItemInvokedCommand { get; private set; }
+        //public ICommand ItemInvokedCommand { get; private set; }
 
-        public ICommand BackRequestedCommand { get; private set; }
-
-        
+        //public ICommand BackRequestedCommand { get; private set; }
 
         public ICommand FilterMenuCommand { get; private set; }
 
@@ -89,94 +72,22 @@ namespace Freedom.UICore.ViewModels.ShellViews
             _shellNavigationService.GoBack();
         }
 
-
         // call navigation item on click
-        private void ItemInvoked(string itemPageKey)
-        {
-            if (string.IsNullOrEmpty(itemPageKey))
-                return;
-            _navigationService.NavigateTo(itemPageKey,"");
-        }
-
-        // call button goback in navigation control
-        private void BackRequested()
-        {
-            _navigationService.TryGoBack();
-        }
-
-
-        // on init Navigation (on showPage)
-        private void LoadedNav()
-        {
-            //on Frame receive the page
-            _navigationService.OnNavigateAction = (pageTitle, goBackStatus) =>
-            {
-                BackRequestStatus = goBackStatus;
-                PageTitle.SetTitle(pageTitle.Title, pageTitle.Glyph, pageTitle.IsVisible);
-            };
-            PageTitle.IsVisible = false;
-            _navigationService.NavigateTo(nameof(HomePage), "");
-
-
-            //_statusNavigateService.Navigate(nameof(StatusBarInfoPage));
-
-            //_statusBarService.DisplayAll(new StatusBarItem(_variableService.UserRTO.Email,
-            //                                              _variableService.CompanyRTO.Name,
-            //                                              _variableService.ShopRTO.Name,
-            //                                              _variableService.BoxRTO.Name,
-            //                                              _variableService.EmployeeRTO.Name,
-            //                                              _variableService.MoneyRTO.Name));
-
-        }
-
-
-        // on acept the autosugget text in list
-        private void QuerySubmitted(string chosenSuggestion)
-        {
-            if (string.IsNullOrEmpty(chosenSuggestion))
-                return;
-            MenuCategory item = MenuItemCollection.SelectMany(x => x.ChildrenMenus).ToList()
-                                 .Where(x => x.Name == chosenSuggestion.ToString()).FirstOrDefault();
-            if (item == null)
-                return;
-            _navigationService.NavigateTo(item.KeyName, "");
-        }
-
-
-       
-
-
-
-        // logout 
-        private void LogoutCommandExecute()
-        {
-            _shellNavigationService.GoBack();
-        }
-
-
-
-        //private void ItemInvoked(NavigationViewItemInvokedEventArgs e)
+        //private void ItemInvoked(string itemPageKey)
         //{
-        //    var clickedItem = e.InvokedItem;
-        //    var clickedItemContainer = e.InvokedItemContainer;
-
-        //    if (e.IsSettingsInvoked)
-        //    {
-        //        // _navigationService.NavigateTo<SettingPage>("");
-        //    }
-        //    else if (e.InvokedItemContainer != null)
-        //    {
-        //        var itemPageKey = e.InvokedItemContainer.Name;
-        //        if (string.IsNullOrEmpty(itemPageKey))
-        //            return;
-        //        _navigationService.NavigateTo(itemPageKey, "", e.RecommendedNavigationTransitionInfo);
-        //    }
+        //    if (string.IsNullOrEmpty(itemPageKey))
+        //        return;
+        //    _navigationService.NavigateTo(itemPageKey,"");
         //}
 
-
+        // call button goback in navigation control
+        //private void BackRequested()
+        //{
+        //    _navigationService.TryGoBack();
+        //}
 
         // on init Navigation (on showPage)
-        //private void LoadedNavCommandExecute(RoutedEventArgs obj)
+        //private void LoadedNav()
         //{
         //    //on Frame receive the page
         //    _navigationService.OnNavigateAction = (pageTitle, goBackStatus) =>
@@ -187,30 +98,34 @@ namespace Freedom.UICore.ViewModels.ShellViews
         //    PageTitle.IsVisible = false;
         //    _navigationService.NavigateTo(nameof(HomePage), "");
 
-        //    //_statusNavigateService.Navigate(nameof(StatusBarInfoPage));
+        //    _statusNavigateService.Navigate(nameof(StatusBarInfoPage));
 
-        //    //_statusBarService.DisplayAll(new StatusBarItem(_variableService.UserRTO.Email,
-        //    //                                              _variableService.CompanyRTO.Name,
-        //    //                                              _variableService.ShopRTO.Name,
-        //    //                                              _variableService.BoxRTO.Name,
-        //    //                                              _variableService.EmployeeRTO.Name,
-        //    //                                              _variableService.MoneyRTO.Name));
+        //    _statusBarService.DisplayAll(new StatusBarItem(_variableService.UserRTO.Email,
+        //                                                  _variableService.CompanyRTO.Name,
+        //                                                  _variableService.ShopRTO.Name,
+        //                                                  _variableService.BoxRTO.Name,
+        //                                                  _variableService.EmployeeRTO.Name,
+        //                                                  _variableService.MoneyRTO.Name));
+
         //}
 
-        //private void QuerySubmittedCommandExecute(AutoSuggestBoxQuerySubmittedEventArgs obj)
+        // on acept the autosugget text in list
+        //private void QuerySubmitted(string chosenSuggestion)
         //{
-        //    if (obj.ChosenSuggestion == null)
+        //    if (string.IsNullOrEmpty(chosenSuggestion))
         //        return;
         //    MenuCategory item = MenuItemCollection.SelectMany(x => x.ChildrenMenus).ToList()
-        //                         .Where(x => x.Name == obj.ChosenSuggestion.ToString()).FirstOrDefault();
-
+        //                         .Where(x => x.Name == chosenSuggestion.ToString()).FirstOrDefault();
         //    if (item == null)
         //        return;
-
         //    _navigationService.NavigateTo(item.KeyName, "");
         //}
 
-
+        // logout
+        private void LogoutCommandExecute()
+        {
+            _shellNavigationService.GoBack();
+        }
 
         #endregion Commands
 
@@ -344,17 +259,9 @@ namespace Freedom.UICore.ViewModels.ShellViews
             MenuItemCollection.Add(new MenuCategory(Lang.Users, MaterialDesignIcons.AccountCircle, null, UsersMenus));
         }
 
-        private void LoadAutoSuggetsCollection()
-        {
-            MenuAutosuggestCollection = new ObservableCollection<string>();
-            var collection = MenuItemCollection.SelectMany(x => x.ChildrenMenus).Select(x => x.Name).ToList();
-            MenuAutosuggestCollection.AddRange(collection);
-        }
-
         #endregion Methods
 
         #region Events
-
 
         // call navigation item on click
         public void NavigationMain_ItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs e)
@@ -374,7 +281,6 @@ namespace Freedom.UICore.ViewModels.ShellViews
                 _navigationService.NavigateTo(itemPageKey, "", e.RecommendedNavigationTransitionInfo);
             }
         }
-
 
         // on acept the autosugget text in list
         public void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
@@ -410,7 +316,6 @@ namespace Freedom.UICore.ViewModels.ShellViews
             }
         }
 
-
         // on init Navigation (on showPage)
         public void NavigationMain_Loaded(object sender, RoutedEventArgs e)
         {
@@ -422,28 +327,21 @@ namespace Freedom.UICore.ViewModels.ShellViews
             PageTitle.IsVisible = false;
             _navigationService.NavigateTo(nameof(HomePage), "");
 
-            //_statusNavigateService.Navigate(nameof(StatusBarInfoPage));
+            _statusNavigateService.Navigate(nameof(StatusBarInfoPage));
 
-            //_statusBarService.DisplayAll(new StatusBarItem(_variableService.UserRTO.Email,
-            //                                              _variableService.CompanyRTO.Name,
-            //                                              _variableService.ShopRTO.Name,
-            //                                              _variableService.BoxRTO.Name,
-            //                                              _variableService.EmployeeRTO.Name,
-            //                                              _variableService.MoneyRTO.Name));
-
-
-
+            _statusBarService.DisplayAll(new StatusBarItem(_variableService.UserRTO.Email,
+                                                          _variableService.CompanyRTO.Name,
+                                                          _variableService.ShopRTO.Name,
+                                                          _variableService.BoxRTO.Name,
+                                                          _variableService.EmployeeRTO.Name,
+                                                          _variableService.MoneyRTO.Name));
         }
-
 
         // call button goback in navigation control
         public void NavigationMain_BackRequested(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewBackRequestedEventArgs args)
         {
             _navigationService.TryGoBack();
         }
-
-
-
 
         #endregion Events
     }

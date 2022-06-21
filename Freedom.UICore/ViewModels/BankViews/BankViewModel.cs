@@ -35,7 +35,7 @@ namespace Freedom.UICore.ViewModels.BankViews
         private BankBind _bank;
         private string _cityName;
         private string _cityToken;
-
+        
         public BankViewModel(IBankService bankService,
                              IValidator<IBank> validator)
         {
@@ -51,6 +51,7 @@ namespace Freedom.UICore.ViewModels.BankViews
             SaveCommand = new RelayCommand(Save);
             SearchCityCommand = new RelayCommand(SearchCity);
             Bank = new BankBind();
+           
         }
 
         #region Properties
