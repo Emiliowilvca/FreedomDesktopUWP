@@ -10,6 +10,7 @@ using Freedom.Frontend.Models.BindableINFO;
 using Freedom.UICore.BaseClass;
 using Freedom.UICore.Models;
 using Freedom.UICore.SendingMessages;
+using Freedom.UICore.Views.SearchViews;
 //using Freedom.UICore.Views.SearchViews;
 using Freedom.Utility;
 using Freedom.Utility.Enums;
@@ -133,7 +134,7 @@ namespace Freedom.UICore.ViewModels.BankViews
 
             int[] subClassId = new int[] { (int)OperationTypeClass.BankCredit };
 
-          //  var respzz = _navigationService.NavigateTo<OperationTypeSearchPage>(new OperationTypeParameter(1, subClassId, _operationTypeToken));
+           var respzz = _navigationService.NavigateTo<OperationTypeSearchPage>(new OperationTypeParameter(1, subClassId, _operationTypeToken));
         }
 
         private void SearchBankAccount()
@@ -158,7 +159,7 @@ namespace Freedom.UICore.ViewModels.BankViews
                     }
                     WeakReferenceMessenger.Default.Unregister<VMSendMessage<BankAccountINFO>, string>(this, _bankAccountToken);
                 });
-            //_navigationService.NavigateTo<BankAccountSearchPage>(new NavigationParameter(1, _bankAccountToken.ToString()));
+            _navigationService.NavigateTo<BankAccountSearchPage>(new NavigationParameter(1, _bankAccountToken.ToString()));
         }
 
         private void Create()

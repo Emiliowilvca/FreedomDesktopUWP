@@ -9,6 +9,7 @@ using Freedom.Frontend.Models.BindableINFO;
 using Freedom.UICore.BaseClass;
 using Freedom.UICore.Models;
 using Freedom.UICore.SendingMessages;
+using Freedom.UICore.Views.SearchViews;
 //using Freedom.UICore.Views.SearchViews;
 using Freedom.Utility.Langs;
 using Freedom.Utility.Models.BaseEntity;
@@ -91,7 +92,7 @@ namespace Freedom.UICore.ViewModels.BankViews
                     }
                     WeakReferenceMessenger.Default.Unregister<VMSendMessage<BankAccountTypeINFO>, string>(this, _sendMessageToken);
                 });
-           // _navigationService.NavigateTo<BankAccountTypeSearchPage>(new NavigationParameter(1, _sendMessageToken.ToString()));
+            _navigationService.NavigateTo<BankAccountTypeSearchPage>(new NavigationParameter(1, _sendMessageToken.ToString()));
         }
 
         private void NavigationResult()

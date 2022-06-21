@@ -26,9 +26,7 @@ namespace Freedom.UICore.ViewModels.ShellViews
             LoadMenuCategory();
             MenuAutosuggestCollection = new ObservableCollection<string>();
 
-            //ItemInvokedCommand = new RelayCommand<string>(ItemInvoked);
-            //BackRequestedCommand = new RelayCommand(BackRequested);
-            //LoadedNavCommand = new RelayCommand(LoadedNav);
+         
 
             LogoutCommand = new RelayCommand(LogoutCommandExecute);
         }
@@ -56,11 +54,7 @@ namespace Freedom.UICore.ViewModels.ShellViews
 
         #region Commands
 
-        //public ICommand LoadedNavCommand { get; private set; }
-
-        //public ICommand ItemInvokedCommand { get; private set; }
-
-        //public ICommand BackRequestedCommand { get; private set; }
+        
 
         public ICommand FilterMenuCommand { get; private set; }
 
@@ -72,56 +66,7 @@ namespace Freedom.UICore.ViewModels.ShellViews
             _shellNavigationService.GoBack();
         }
 
-        // call navigation item on click
-        //private void ItemInvoked(string itemPageKey)
-        //{
-        //    if (string.IsNullOrEmpty(itemPageKey))
-        //        return;
-        //    _navigationService.NavigateTo(itemPageKey,"");
-        //}
-
-        // call button goback in navigation control
-        //private void BackRequested()
-        //{
-        //    _navigationService.TryGoBack();
-        //}
-
-        // on init Navigation (on showPage)
-        //private void LoadedNav()
-        //{
-        //    //on Frame receive the page
-        //    _navigationService.OnNavigateAction = (pageTitle, goBackStatus) =>
-        //    {
-        //        BackRequestStatus = goBackStatus;
-        //        PageTitle.SetTitle(pageTitle.Title, pageTitle.Glyph, pageTitle.IsVisible);
-        //    };
-        //    PageTitle.IsVisible = false;
-        //    _navigationService.NavigateTo(nameof(HomePage), "");
-
-        //    _statusNavigateService.Navigate(nameof(StatusBarInfoPage));
-
-        //    _statusBarService.DisplayAll(new StatusBarItem(_variableService.UserRTO.Email,
-        //                                                  _variableService.CompanyRTO.Name,
-        //                                                  _variableService.ShopRTO.Name,
-        //                                                  _variableService.BoxRTO.Name,
-        //                                                  _variableService.EmployeeRTO.Name,
-        //                                                  _variableService.MoneyRTO.Name));
-
-        //}
-
-        // on acept the autosugget text in list
-        //private void QuerySubmitted(string chosenSuggestion)
-        //{
-        //    if (string.IsNullOrEmpty(chosenSuggestion))
-        //        return;
-        //    MenuCategory item = MenuItemCollection.SelectMany(x => x.ChildrenMenus).ToList()
-        //                         .Where(x => x.Name == chosenSuggestion.ToString()).FirstOrDefault();
-        //    if (item == null)
-        //        return;
-        //    _navigationService.NavigateTo(item.KeyName, "");
-        //}
-
-        // logout
+       
         private void LogoutCommandExecute()
         {
             _shellNavigationService.GoBack();
@@ -207,19 +152,19 @@ namespace Freedom.UICore.ViewModels.ShellViews
             //reportMenus.Add(new MenuCategory(Lang.TransferReport, MaterialDesignIcons.FileSwap, typeof(TransferReportPage)));
 
             var BankMenus = new ObservableCollection<MenuCategory>();
-            //BankMenus.Add(new MenuCategory(Lang.AccountStatement, MaterialDesignIcons.ChartBoxOutline, typeof(BankAccountStatementPage)));
+            BankMenus.Add(new MenuCategory(Lang.AccountStatement, MaterialDesignIcons.ChartBoxOutline, typeof(BankAccountStatementPage)));
             BankMenus.Add(new MenuCategory(Lang.Bank, MaterialDesignIcons.Bank, typeof(BankPage), null));
-            //BankMenus.Add(new MenuCategory(Lang.BankAccount, MaterialDesignIcons.CardAccountDetails, typeof(BankAccountPage)));
-            //BankMenus.Add(new MenuCategory(Lang.BankAccountType, MaterialDesignIcons.CommentBookmark, typeof(BankAccountTypePage)));
-            //BankMenus.Add(new MenuCategory(Lang.BankDeposit, MaterialDesignIcons.BankTransferIn, typeof(BankDepositPage)));
-            //BankMenus.Add(new MenuCategory(Lang.BankDepositReport, MaterialDesignIcons.LayersTripleOutline, typeof(BankDepositReportPage)));
-            //BankMenus.Add(new MenuCategory(Lang.BankExtraction, MaterialDesignIcons.BankTransferOut, typeof(BankExtractionPage)));
-            //BankMenus.Add(new MenuCategory(Lang.BankExtractionReport, MaterialDesignIcons.ScriptTextPlayOutline, typeof(BankExtractionReportPage)));
-            //BankMenus.Add(new MenuCategory(Lang.BankExtractionType, MaterialDesignIcons.CommentArrowLeft, typeof(BankExtractionTypePage)));
-            //BankMenus.Add(new MenuCategory(Lang.BouncedCheck, MaterialDesignIcons.CardBulletedOffOutline, typeof(BankBouncedCheckPage)));
-            //BankMenus.Add(new MenuCategory(Lang.Cards, MaterialDesignIcons.CreditCard, typeof(BankCardsPage)));
-            //BankMenus.Add(new MenuCategory(Lang.ReleaseCheck, MaterialDesignIcons.UploadMultiple, typeof(BankReleaseCheckPage)));
-            //BankMenus.Add(new MenuCategory(Lang.Transfers, MaterialDesignIcons.BankTransfer, typeof(BankTransfersPage)));
+            BankMenus.Add(new MenuCategory(Lang.BankAccount, MaterialDesignIcons.CardAccountDetails, typeof(BankAccountPage)));
+            BankMenus.Add(new MenuCategory(Lang.BankAccountType, MaterialDesignIcons.CommentBookmark, typeof(BankAccountTypePage)));
+            BankMenus.Add(new MenuCategory(Lang.BankDeposit, MaterialDesignIcons.BankTransferIn, typeof(BankDepositPage)));
+           //BankMenus.Add(new MenuCategory(Lang.BankDepositReport, MaterialDesignIcons.LayersTripleOutline, typeof(BankDepositReportPage)));
+            BankMenus.Add(new MenuCategory(Lang.BankExtraction, MaterialDesignIcons.BankTransferOut, typeof(BankExtractionPage)));
+            BankMenus.Add(new MenuCategory(Lang.BankExtractionReport, MaterialDesignIcons.ScriptTextPlayOutline, typeof(BankExtractionReportPage)));
+            BankMenus.Add(new MenuCategory(Lang.BankExtractionType, MaterialDesignIcons.CommentArrowLeft, typeof(BankExtractionTypePage)));
+            BankMenus.Add(new MenuCategory(Lang.BouncedCheck, MaterialDesignIcons.CardBulletedOffOutline, typeof(BankBouncedCheckPage)));
+            BankMenus.Add(new MenuCategory(Lang.Cards, MaterialDesignIcons.CreditCard, typeof(BankCardsPage)));
+            BankMenus.Add(new MenuCategory(Lang.ReleaseCheck, MaterialDesignIcons.UploadMultiple, typeof(BankReleaseCheckPage)));
+            BankMenus.Add(new MenuCategory(Lang.Transfers, MaterialDesignIcons.BankTransfer, typeof(BankTransfersPage)));
 
             var EmployeeMenus = new ObservableCollection<MenuCategory>();
             //EmployeeMenus.Add(new MenuCategory(Lang.Employee, MaterialDesignIcons.AccountHardHat, typeof(EmployeePage)));

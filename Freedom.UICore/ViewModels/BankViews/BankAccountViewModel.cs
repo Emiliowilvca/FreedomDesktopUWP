@@ -9,6 +9,7 @@ using Freedom.Frontend.Models.BindableINFO;
 using Freedom.UICore.BaseClass;
 using Freedom.UICore.Models;
 using Freedom.UICore.SendingMessages;
+using Freedom.UICore.Views.SearchViews;
 //using Freedom.UICore.Views.SearchViews;
 using Freedom.Utility.Langs;
 using Freedom.Utility.Models.BaseEntity;
@@ -117,7 +118,7 @@ namespace Freedom.UICore.ViewModels.BankViews
                     }
                     WeakReferenceMessenger.Default.Unregister<VMSendMessage<BankAccountINFO>, string>(this, _sendMessageToken);
                 });
-            //_navigationService.NavigateTo<BankAccountSearchPage>(new NavigationParameter(1, _sendMessageToken.ToString()));
+            _navigationService.NavigateTo<BankAccountSearchPage>(new NavigationParameter(1, _sendMessageToken.ToString()));
         }
 
         private async void Save()
@@ -217,7 +218,7 @@ namespace Freedom.UICore.ViewModels.BankViews
                     }
                     WeakReferenceMessenger.Default.Unregister<VMSendMessage<MoneyINFO>, string>(this, _moneyToken);
                 });
-           // _navigationService.NavigateTo<MoneySearchPage>(new NavigationParameter(1, _moneyToken.ToString()));
+            _navigationService.NavigateTo<MoneySearchPage>(new NavigationParameter(1, _moneyToken.ToString()));
         }
 
         private void SearchBank()
@@ -238,7 +239,7 @@ namespace Freedom.UICore.ViewModels.BankViews
                     }
                     WeakReferenceMessenger.Default.Unregister<VMSendMessage<BankINFO>, string>(this, _bankToken);
                 });
-          //  _navigationService.NavigateTo<BankSearchPage>(new NavigationParameter(1, _bankToken.ToString()));
+            _navigationService.NavigateTo<BankSearchPage>(new NavigationParameter(1, _bankToken.ToString()));
         }
 
         private void SearchBankAccountType()
@@ -259,7 +260,7 @@ namespace Freedom.UICore.ViewModels.BankViews
                     }
                     WeakReferenceMessenger.Default.Unregister<VMSendMessage<BankAccountTypeINFO>, string>(this, _bankAccountTypeToken);
                 });
-           // _navigationService.NavigateTo<BankAccountTypeSearchPage>(new NavigationParameter(1, _bankAccountTypeToken.ToString()));
+            _navigationService.NavigateTo<BankAccountTypeSearchPage>(new NavigationParameter(1, _bankAccountTypeToken.ToString()));
         }
 
         #endregion Commands

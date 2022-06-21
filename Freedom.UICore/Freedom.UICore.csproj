@@ -244,8 +244,41 @@
     <Compile Include="ViewModels\ShellViews\UrlBaseViewModel.cs" />
     <Compile Include="ViewModels\StatusBarViews\StatusBarInfoViewModel.cs" />
     <Compile Include="ViewModels\StatusBarViews\StatusBarNotifyViewModel.cs" />
+    <Compile Include="Views\BankViews\BankAccountPage.xaml.cs">
+      <DependentUpon>BankAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankViews\BankAccountStatementPage.xaml.cs">
+      <DependentUpon>BankAccountStatementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankViews\BankAccountTypePage.xaml.cs">
+      <DependentUpon>BankAccountTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankViews\BankBouncedCheckPage.xaml.cs">
+      <DependentUpon>BankBouncedCheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankViews\BankCardsPage.xaml.cs">
+      <DependentUpon>BankCardsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankViews\BankDepositPage.xaml.cs">
+      <DependentUpon>BankDepositPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankViews\BankExtractionPage.xaml.cs">
+      <DependentUpon>BankExtractionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankViews\BankExtractionReportPage.xaml.cs">
+      <DependentUpon>BankExtractionReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankViews\BankExtractionTypePage.xaml.cs">
+      <DependentUpon>BankExtractionTypePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BankViews\BankPage.xaml.cs">
       <DependentUpon>BankPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankViews\BankReleaseCheckPage.xaml.cs">
+      <DependentUpon>BankReleaseCheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankViews\BankTransfersPage.xaml.cs">
+      <DependentUpon>BankTransfersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainViews\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -499,7 +532,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\BankViews\BankAccountPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankViews\BankAccountStatementPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankViews\BankAccountTypePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankViews\BankBouncedCheckPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankViews\BankCardsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankViews\BankDepositPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankViews\BankExtractionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankViews\BankExtractionReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankViews\BankExtractionTypePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\BankViews\BankPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankViews\BankReleaseCheckPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankViews\BankTransfersPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

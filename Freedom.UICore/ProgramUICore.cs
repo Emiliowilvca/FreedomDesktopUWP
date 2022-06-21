@@ -284,7 +284,7 @@ namespace Freedom.UICore
             services.AddTransient<BankAccountViewModel>();
             services.AddTransient<BankBouncedCheckViewModel>();
             services.AddTransient<BankCardsViewModel>();
-          //  services.AddTransient<BankDepositReportViewModel>();
+           // services.AddTransient<BankDepositReportViewModel>();
             services.AddTransient<BankDepositViewModel>();
             services.AddTransient<BankExtractionReportViewModel>();
             services.AddTransient<BankExtractionTypeViewModel>();
@@ -299,7 +299,7 @@ namespace Freedom.UICore
             //services.AddTransient<BranchViewModel>();
             services.AddTransient<BrandSearchViewModel>();
             //services.AddTransient<BrandViewModel>();
-            //services.AddTransient<BankDepositViewModel>();
+            services.AddTransient<BankDepositViewModel>();
             services.AddTransient<CarrierSearchViewModel>();
             //services.AddTransient<CarrierViewModel>();
             //services.AddTransient<CashBoxCloseViewModel>();
