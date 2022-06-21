@@ -27,7 +27,7 @@ namespace Freedom.UICore.ViewModels.SettingViews
                 switch (theme)
                 {
                     case ElementTheme.Default:
-                        ThemeTitle = "Theme Light";
+                        ThemeTitle = "Theme Default";
                         break;
 
                     case ElementTheme.Light:
@@ -38,9 +38,7 @@ namespace Freedom.UICore.ViewModels.SettingViews
                         ThemeTitle = "Theme Dark";
                         break;
 
-                    default:
-                        ThemeTitle = "Theme Light";
-                        break;
+                   
                 }
             }
         }

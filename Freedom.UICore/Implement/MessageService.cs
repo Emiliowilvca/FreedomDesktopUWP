@@ -17,7 +17,8 @@ namespace Freedom.UICore.Implement
             dialog.CloseButtonText = "Cancel";
             dialog.DefaultButton = ContentDialogButton.Primary;
             dialog.Content = new object ();
-            dialog.XamlRoot = AppEssential.MainWindow.Content.XamlRoot;
+            //dialog.XamlRoot = AppEssential.MainWindow.Content.XamlRoot;
+            
             var result = await dialog.ShowAsync();
         }
 
@@ -44,6 +45,7 @@ namespace Freedom.UICore.Implement
             //add the page for customize message
             //dialog.Content = new ContentDialogContent();
             dialog.XamlRoot = AppEssential.MainWindow.Content.XamlRoot;
+            
             return await dialog.ShowAsync();
         }
     }

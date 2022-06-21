@@ -1,7 +1,7 @@
 ﻿using Freedom.UICore.BaseClass;
 using Freedom.UICore.ViewModels.StatusBarViews;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls;
 
 namespace Freedom.UICore.Views.StatusBarViews
 {

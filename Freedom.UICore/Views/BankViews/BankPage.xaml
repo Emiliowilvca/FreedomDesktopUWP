@@ -15,17 +15,19 @@
         <Style TargetType="Grid" x:Name="ContainerStyle">
             <Setter Property="Margin" Value="5 2" />
         </Style>
+        
     </Page.Resources>
     <Grid cc:GridPlus.ColumnDefinitions="*,4*,*">
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
             <!--Name-->
             <Grid cc:GridPlus.ColumnDefinitions="Auto, *" Style="{StaticResource ContainerStyle}">
                 <FontIcon Grid.Column="0"
                           Glyph="{x:Bind ico:MaterialDesignIcons.Bank}"
                           Style="{StaticResource TextboxIconHeaderStyle}" />
-                <TextBox Grid.Column="1"
+                <TextBox Grid.Column="1" 
+                         x:Name="txtName"
                          Text="{x:Bind ViewModel.Bank.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         PlaceholderText=""
+                         PlaceholderText="{x:Bind lg:Lang.Name}"
                          CharacterCasing="Upper"
                          Header="{x:Bind lg:Lang.Name}"
                          HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"

@@ -203,6 +203,8 @@
     <Compile Include="ViewModels\ShellViews\NewUserViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\RecoverPasswordViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\UrlBaseViewModel.cs" />
+    <Compile Include="ViewModels\StatusBarViews\StatusBarInfoViewModel.cs" />
+    <Compile Include="ViewModels\StatusBarViews\StatusBarNotifyViewModel.cs" />
     <Compile Include="Views\BankViews\BankPage.xaml.cs">
       <DependentUpon>BankPage.xaml</DependentUpon>
     </Compile>
@@ -229,6 +231,9 @@
     </Compile>
     <Compile Include="Views\ShellViews\UrlBasePage.xaml.cs">
       <DependentUpon>UrlBasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StatusBarViews\StatusBarInfoPage.xaml.cs">
+      <DependentUpon>StatusBarInfoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StatusBarViews\StatusBarNotifyPage.xaml.cs">
       <DependentUpon>StatusBarNotifyPage.xaml</DependentUpon>
@@ -373,6 +378,10 @@
     <Page Include="Views\ShellViews\UrlBasePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StatusBarViews\StatusBarInfoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\StatusBarViews\StatusBarNotifyPage.xaml">
       <SubType>Designer</SubType>

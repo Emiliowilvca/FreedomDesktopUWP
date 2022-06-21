@@ -9,8 +9,17 @@ namespace Freedom.UICore.Implement
     {
         public void SetTextboxFocus(string textboxName)
         {
-            var textbox = RootElementHelper.FindChild<TextBox>(AppEssential.MainWindow.Content, textboxName);
+             
 
+            var textbox = RootElementHelper.FindChild<TextBox>(Window.Current.Content.XamlRoot.Content, textboxName);
+            if (textbox == null || !textbox.IsEnabled)
+                return;
+            textbox.Focus(FocusState.Keyboard);
+        }
+
+        public void SetTextboxFocus(UIElement parent, string textboxName)
+        {
+            var textbox = RootElementHelper.FindChild<TextBox>(parent, textboxName);
             if (textbox == null || !textbox.IsEnabled)
                 return;
             textbox.Focus(FocusState.Keyboard);

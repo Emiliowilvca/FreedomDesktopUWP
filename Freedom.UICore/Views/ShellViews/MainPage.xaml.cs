@@ -2,7 +2,6 @@
 using Freedom.UICore.Interface;
 using Freedom.UICore.ViewModels.ShellViews;
 using Microsoft.Extensions.DependencyInjection;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace Freedom.UICore.Views.ShellViews
@@ -18,7 +17,7 @@ namespace Freedom.UICore.Views.ShellViews
             nav.InitializeNavigationContainer(this.ContentFrame);
 
             var statusNavigateService = AppEssential.ServiceProvider.GetRequiredService<IStatusNavigateService>();
-            // statusNavigateService.InitializeStatusBar(this.StatusBarFrame);
+             statusNavigateService.InitializeStatusBar(this.StatusBarFrame);
 
             SuggestTextbox.TextChanged += ViewModel.AutoSuggestBox_TextChanged;
             SuggestTextbox.QuerySubmitted += ViewModel.AutoSuggestBox_QuerySubmitted;
@@ -26,27 +25,8 @@ namespace Freedom.UICore.Views.ShellViews
             NavigationMain.Loaded += ViewModel.NavigationMain_Loaded;
             NavigationMain.BackRequested += ViewModel.NavigationMain_BackRequested;
             LogoutButton.Tapped += (s, e) => { ViewModel.LogoutCommand.Execute(""); };
-
         }
-
-        
 
         public MainPageViewModel ViewModel { get; set; }
-
-
-        
-
-       
-
-        private void NavigationMain_ItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args)
-        {
-             
-        }
-
-       
-
-      
-
-       
     }
 }

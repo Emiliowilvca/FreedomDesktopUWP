@@ -20,6 +20,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Windows.UI.Xaml;
 using Freedom.UICore.Views.SettingViews;
+using Freedom.UICore.Views.StatusBarViews;
 
 namespace Freedom.UICore.ViewModels.ShellViews
 {

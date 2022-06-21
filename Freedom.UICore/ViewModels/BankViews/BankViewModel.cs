@@ -20,6 +20,8 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Xaml;
+
 namespace Freedom.UICore.ViewModels.BankViews
 {
     public class BankViewModel : BaseViewModel

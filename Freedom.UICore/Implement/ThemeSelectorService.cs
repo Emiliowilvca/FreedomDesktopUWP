@@ -16,11 +16,7 @@ namespace Freedom.UICore.Implement
         }
 
         public void SetTheme(ElementTheme theme)
-        {
-            //if (AppEssential.MainWindow?.Content is FrameworkElement frameworkElement)
-            //{
-            //    frameworkElement.RequestedTheme = theme;
-            //}
+        {           
             if (Window.Current.Content is FrameworkElement frameworkElement)
             {
                 frameworkElement.RequestedTheme = theme;
