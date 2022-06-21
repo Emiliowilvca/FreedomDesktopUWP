@@ -250,8 +250,122 @@
     <Compile Include="Views\MainViews\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SearchViews\ApplySearchPage.xaml.cs">
+      <DependentUpon>ApplySearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\BankAccountSearchPage.xaml.cs">
+      <DependentUpon>BankAccountSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\BankAccountTypeSearchPage.xaml.cs">
+      <DependentUpon>BankAccountTypeSearchPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SearchViews\BankSearchPage.xaml.cs">
       <DependentUpon>BankSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\BoxSearchPage.xaml.cs">
+      <DependentUpon>BoxSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\BranchSearchPage.xaml.cs">
+      <DependentUpon>BranchSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\BrandSearchPage.xaml.cs">
+      <DependentUpon>BrandSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\CarrierSearchPage.xaml.cs">
+      <DependentUpon>CarrierSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\CategorySearchPage.xaml.cs">
+      <DependentUpon>CategorySearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\CitySearchPage.xaml.cs">
+      <DependentUpon>CitySearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\CompanySearchPage.xaml.cs">
+      <DependentUpon>CompanySearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\CountrySearchPage.xaml.cs">
+      <DependentUpon>CountrySearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\CustomerAccountSearchPage.xaml.cs">
+      <DependentUpon>CustomerAccountSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\CustomerSearchPage.xaml.cs">
+      <DependentUpon>CustomerSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\DrugSearchPage.xaml.cs">
+      <DependentUpon>DrugSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\EmployeeSearchPage.xaml.cs">
+      <DependentUpon>EmployeeSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\ExpenceTypeSearchPage.xaml.cs">
+      <DependentUpon>ExpenceTypeSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\GroupSearchPage.xaml.cs">
+      <DependentUpon>GroupSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\JobPostSearchPage.xaml.cs">
+      <DependentUpon>JobPostSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\JobSectorSearchPage.xaml.cs">
+      <DependentUpon>JobSectorSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\MeasureSearchPage.xaml.cs">
+      <DependentUpon>MeasureSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\MoneySearchPage.xaml.cs">
+      <DependentUpon>MoneySearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\OperationTypeSearchPage.xaml.cs">
+      <DependentUpon>OperationTypeSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\PackageSearchPage.xaml.cs">
+      <DependentUpon>PackageSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\PaymentTypeSearchPage.xaml.cs">
+      <DependentUpon>PaymentTypeSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\PrioritySearchPage.xaml.cs">
+      <DependentUpon>PrioritySearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\ProviderSearchPage.xaml.cs">
+      <DependentUpon>ProviderSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\ProviderTypeSearchPage.xaml.cs">
+      <DependentUpon>ProviderTypeSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\ReasonReturnSearchPage.xaml.cs">
+      <DependentUpon>ReasonReturnSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\RouteSearchPage.xaml.cs">
+      <DependentUpon>RouteSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\SectorProductSearchPage.xaml.cs">
+      <DependentUpon>SectorProductSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\ShopSearchPage.xaml.cs">
+      <DependentUpon>ShopSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\SourceProductSearchPage.xaml.cs">
+      <DependentUpon>SourceProductSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\StateSearchPage.xaml.cs">
+      <DependentUpon>StateSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\SubGroupSearchPage.xaml.cs">
+      <DependentUpon>SubGroupSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\TownSearchPage.xaml.cs">
+      <DependentUpon>TownSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\VehicleSearchPage.xaml.cs">
+      <DependentUpon>VehicleSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\WayAdminSearchPage.xaml.cs">
+      <DependentUpon>WayAdminSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\ZoneSearchPage.xaml.cs">
+      <DependentUpon>ZoneSearchPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingViews\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
@@ -393,7 +507,159 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\SearchViews\ApplySearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\BankAccountSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\BankAccountTypeSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\SearchViews\BankSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\BoxSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\BranchSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\BrandSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\CarrierSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\CategorySearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\CitySearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\CompanySearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\CountrySearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\CustomerAccountSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\CustomerSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\DrugSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\EmployeeSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\ExpenceTypeSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\GroupSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\JobPostSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\JobSectorSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\MeasureSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\MoneySearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\OperationTypeSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\PackageSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\PaymentTypeSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\PrioritySearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\ProviderSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\ProviderTypeSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\ReasonReturnSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\RouteSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\SectorProductSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\ShopSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\SourceProductSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\StateSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\SubGroupSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\TownSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\VehicleSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\WayAdminSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchViews\ZoneSearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

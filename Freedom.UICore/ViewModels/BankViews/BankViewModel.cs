@@ -194,7 +194,7 @@ namespace Freedom.UICore.ViewModels.BankViews
                     }
                     WeakReferenceMessenger.Default.Unregister<VMSendMessage<CityINFO>, string>(this, _cityToken);
                 });
-            //_navigationService.NavigateTo<CitySearchPage>(new NavigationParameter(1, _cityToken.ToString()));
+            _navigationService.NavigateTo<CitySearchPage>(new NavigationParameter(1, _cityToken.ToString()));
         }
 
         #endregion Commands
