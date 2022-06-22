@@ -7,6 +7,7 @@
     xmlns:ico="using:Freedom.Frontend.FontIcons"
     xmlns:cc="using:Freedom.UICore.Controls"
     xmlns:lg="using:Freedom.Utility.Langs"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
     NavigationCacheMode="Enabled"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -17,7 +18,7 @@
     </Page.Resources>
 
     <Grid cc:GridPlus.RowDefinitions="Auto, *">
-        <ProgressBar Grid.Row="0"
+        <muxc:ProgressBar Grid.Row="0"
                      Style="{StaticResource ProgressBarStyle}"
                      Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
         <Pivot x:Name="rootPivot"

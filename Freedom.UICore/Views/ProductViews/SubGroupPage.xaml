@@ -8,6 +8,7 @@
     xmlns:ico="using:Freedom.Frontend.FontIcons"
     xmlns:cc="using:Freedom.UICore.Controls"
     xmlns:lg="using:Freedom.Utility.Langs"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     NavigationCacheMode="Enabled"    
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
     <Grid cc:GridPlus.RowDefinitions="Auto, *">
@@ -59,7 +60,7 @@
 
                 </TextBox>
             </Grid>
-            <ProgressBar 
+           <muxc:ProgressBar 
                      Style="{StaticResource ProgressBarStyle}"
                      Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
             <!--Buttons-->

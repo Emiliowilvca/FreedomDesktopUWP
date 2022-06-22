@@ -9,6 +9,7 @@ using Freedom.UICore.Views.CashBoxViews;
 using Freedom.UICore.Views.CompanyViews;
 using Freedom.UICore.Views.CountryViews;
 using Freedom.UICore.Views.CustomerViews;
+using Freedom.UICore.Views.EmployeeViews;
 using Freedom.UICore.Views.ExpenceViews;
 using Freedom.UICore.Views.InventoryViews;
 using Freedom.UICore.Views.MainViews;
@@ -186,9 +187,9 @@ namespace Freedom.UICore.ViewModels.ShellViews
             BankMenus.Add(new MenuCategory(Lang.Transfers, MaterialDesignIcons.BankTransfer, typeof(BankTransfersPage)));
 
             var EmployeeMenus = new ObservableCollection<MenuCategory>();
-            //EmployeeMenus.Add(new MenuCategory(Lang.Employee, MaterialDesignIcons.AccountHardHat, typeof(EmployeePage)));
-            //EmployeeMenus.Add(new MenuCategory(Lang.Job_Position, MaterialDesignIcons.BadgeAccount, typeof(JobPostPage)));
-            //EmployeeMenus.Add(new MenuCategory(Lang.job_Sectors, MaterialDesignIcons.AccountSwitch, typeof(JobSectorPage)));
+            EmployeeMenus.Add(new MenuCategory(Lang.Employee, MaterialDesignIcons.AccountHardHat, typeof(EmployeePage)));
+            EmployeeMenus.Add(new MenuCategory(Lang.Job_Position, MaterialDesignIcons.BadgeAccount, typeof(JobPostPage)));
+            EmployeeMenus.Add(new MenuCategory(Lang.job_Sectors, MaterialDesignIcons.AccountSwitch, typeof(JobSectorPage)));
 
             var ProductionMenus = new ObservableCollection<MenuCategory>();
 

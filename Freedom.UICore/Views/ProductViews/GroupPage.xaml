@@ -8,7 +8,8 @@
     mc:Ignorable="d"
     xmlns:ico="using:Freedom.Frontend.FontIcons"
     xmlns:cc="using:Freedom.UICore.Controls"
-    xmlns:lg="using:Freedom.Utility.Langs"   
+    xmlns:lg="using:Freedom.Utility.Langs"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     NavigationCacheMode="Enabled"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid cc:GridPlus.RowDefinitions="Auto, *">
@@ -21,9 +22,8 @@
                      PlaceholderText="{x:Bind lg:Lang.Group}"
                      CharacterCasing="Upper"
                      IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
-            <ProgressBar Grid.Row="0"
-                     Style="{StaticResource ProgressBarStyle}"
-                     Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
+           <muxc:ProgressBar Style="{StaticResource ProgressBarStyle}"
+                             Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
             <Grid Margin="0 25 0 0">
                 <ScrollViewer>
                     <VariableSizedWrapGrid ItemHeight="40"

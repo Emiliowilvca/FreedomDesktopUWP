@@ -24,16 +24,16 @@
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
             <FontFamily x:Key="MaterialDesignIcons">ms-appx:///ResourceCore/Fonts/materialdesignicons-webfont.ttf#Material Design Icons</FontFamily>
-            <cv:BoolToVisibilityConverter x:Key="boolvisibilityConverter"/>
             <cv:BoolNegationConverter x:Key="inverseBoolConverter"/>
+            <cv:BoolToVisibilityConverter x:Key="boolvisibilityConverter"/>
             <cv:FormatStringConverter x:Key="formatStringConverter"/>            
-            <converters:NullToZeroConverter x:Key="NullToZeroConverters" />
-            <converters:ToDateTimeOffsetConverter x:Key="toDateTimeOffsetConverter"/>
-            <converters:DecimalToDoubleConverter x:Key="decimalToDoubleConverter"/>
-            <converters:DecimalToByteConverter x:Key="decimalToByteConverter"/>
-            <converters:StringFormatConverter x:Key="stringFormatConverter"/>
             <converters:CustomStringFormatConverter x:Key="customStringFormatConverter"/>
             <converters:DatetimeToShortDateConverter x:Key="datetimeToShortDateConverter"/>
+            <converters:DecimalToByteConverter x:Key="decimalToByteConverter"/>
+            <converters:DecimalToDoubleConverter x:Key="decimalToDoubleConverter"/>
+            <converters:NullToZeroConverter x:Key="NullToZeroConverters" />
+            <converters:StringFormatConverter x:Key="stringFormatConverter"/>
+            <converters:ToDateTimeOffsetConverter x:Key="toDateTimeOffsetConverter"/>
             
 
         </ResourceDictionary>

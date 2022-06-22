@@ -8,6 +8,7 @@
     xmlns:cc="using:Freedom.UICore.Controls"
     xmlns:lg="using:Freedom.Utility.Langs"
     mc:Ignorable="d"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     NavigationCacheMode="Enabled"
     x:Name="_page"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -164,7 +165,7 @@
                             </StackPanel>
                         </Grid>
                     </StackPanel>
-                    <ProgressBar Grid.Row="1"
+                   <muxc:ProgressBar Grid.Row="1"
                                  Style="{StaticResource ProgressBarStyle}"
                                  Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
 

@@ -402,7 +402,6 @@ namespace Freedom.UICore
             services.AddTransient<WayAdminViewModel>();
             services.AddTransient<ZoneSearchViewModel>();
             services.AddTransient<ZoneViewModel>();
-
             services.AddTransient<UnoWebViewModel>();
         }
 

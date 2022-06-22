@@ -16,8 +16,7 @@ namespace Freedom.UICore
         public static void InitializeServiceProvider(ServiceProvider serviceProvider)
         {
             ServiceProvider = serviceProvider;
-            //Freedom.Report.Program.InitializeServiceProvider(serviceProvider);
-            //Report.Program.ServiceProvider = ServiceProvider;
+            Freedom.Report.Program.InitializeServiceProvider(serviceProvider);
         }
     }
 }
