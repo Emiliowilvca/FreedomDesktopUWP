@@ -12,20 +12,13 @@
     <Grid>
         <StackPanel Grid.Row="1">
 
-            <CommandBar   
-                                    IsOpen="False" 
-                                    FlowDirection="LeftToRight">
-
-
+            <CommandBar  IsOpen="False" 
+                         FlowDirection="LeftToRight">
                 <AppBarToggleButton Icon="Shuffle" Label="Shuffle"/>
 
                 <AppBarButton Icon="Add"
-                                     Label="hola"                                               
-                                     ToolTipService.ToolTip="suerte"/>
-                    
-                
-                
-
+                              Label="hola"                                               
+                              ToolTipService.ToolTip="suerte"/>
             </CommandBar>
         </StackPanel>
     </Grid>

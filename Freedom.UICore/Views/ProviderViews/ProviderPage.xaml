@@ -1,0 +1,334 @@
+﻿<Page
+    x:Class="Freedom.UICore.Views.ProviderViews.ProviderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:ico="using:Freedom.Frontend.FontIcons"
+    xmlns:cc="using:Freedom.UICore.Controls"
+    xmlns:lg="using:Freedom.Utility.Langs"
+    NavigationCacheMode="Enabled"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid cc:GridPlus.ColumnDefinitions="*, 4*, *" >
+
+        <StackPanel Grid.Column="1">
+
+            <!--Name-->
+            <Grid cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.BusinessName}"
+                           Margin="5 1" />
+                <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.HomeCityOutline}"
+                          Height="22" />
+                <TextBox Grid.Column="1" Grid.Row="1"
+                         x:Name="txtName"
+                         Text="{x:Bind ViewModel.Provider.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="{x:Bind lg:Lang.BusinessName}"
+                         CharacterCasing="Upper"
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+            </Grid>
+
+            <!--Address-->
+            <Grid cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.Address}"
+                           Margin="5 1" />
+                <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.MapMarker}"
+                          Height="22" />
+                <TextBox Grid.Column="1" Grid.Row="1"
+                         Text="{x:Bind ViewModel.Provider.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="{x:Bind lg:Lang.Address}"
+                         CharacterCasing="Upper"
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+            </Grid>
+
+            <!--comercialContact-->
+            <Grid cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.comercialContact}"
+                           Margin="5 1" />
+                <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.CardAccountPhoneOutline}"
+                          Height="22" />
+                <TextBox Grid.Column="1" Grid.Row="1"
+                         Text="{x:Bind ViewModel.Provider.Contact, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="{x:Bind lg:Lang.comercialContact}"
+                         CharacterCasing="Upper"
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+            </Grid>
+
+            <!--Email and phone-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *" ColumnSpacing="15">
+                <!--Email-->
+                <Grid Grid.Column="0"
+                      cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                    <TextBlock Grid.Column="1" Grid.Row="0"
+                               Text="{x:Bind lg:Lang.Email}"
+                               Margin="5 1" />
+                    <FontIcon Grid.Column="0" Grid.Row="1"
+                              FontFamily="{StaticResource MaterialDesignIcons}"
+                              Glyph="{x:Bind ico:MaterialDesignIcons.Email}"
+                              Height="22" />
+                    <TextBox Grid.Column="1" Grid.Row="1"
+                             Text="{x:Bind ViewModel.Provider.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Email}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                <!--phone-->
+                <Grid Grid.Column="1"
+                      cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                    <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.PhoneNumber}"
+                           Margin="5 1" />
+                    <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.Phone}"
+                          Height="22" />
+                    <TextBox Grid.Column="1" Grid.Row="1"
+                         Text="{x:Bind ViewModel.Provider.Phone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="{x:Bind lg:Lang.PhoneNumber}"
+                         CharacterCasing="Upper"
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--timbrado + RUC -->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *" ColumnSpacing="15">
+
+                <!--Timbrado-->
+                <Grid Grid.Column="0"
+                      cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                    <TextBlock Grid.Column="1" Grid.Row="0"
+                               Text="{x:Bind lg:Lang.stamped}"
+                               Margin="5 1" />
+                    <FontIcon Grid.Column="0" Grid.Row="1"
+                              FontFamily="{StaticResource MaterialDesignIcons}"
+                              Glyph="{x:Bind ico:MaterialDesignIcons.CreditCardChipOutline}"
+                              Height="22" />
+                    <TextBox Grid.Column="1" Grid.Row="1"
+                             Text="{x:Bind ViewModel.Provider.Timbrado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.stamped}"
+                             CharacterCasing="Upper"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+
+                <!--TaxpayerIdNumber RUC-->
+                <Grid Grid.Column="1"
+                      cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                    <TextBlock Grid.Column="1" Grid.Row="0"
+                               Text="{x:Bind lg:Lang.TaxpayerIdNumber}"
+                               Margin="5 1" />
+                    <FontIcon Grid.Column="0" Grid.Row="1"
+                              FontFamily="{StaticResource MaterialDesignIcons}"
+                              Glyph="{x:Bind ico:MaterialDesignIcons.CardAccountDetailsStarOutline}"
+                              Height="22" />
+                    <TextBox Grid.Column="1" Grid.Row="1"
+                             Text="{x:Bind ViewModel.Provider.Ruc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.TaxpayerIdNumber}"
+                             CharacterCasing="Upper"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--Date-Authorization + Date-Expire-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *" ColumnSpacing="15">
+                <Grid  Grid.Column="0"
+                       cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                    <TextBlock Grid.Column="1" Grid.Row="0"
+                               Text="{x:Bind lg:Lang.Authorization}"
+                               Margin="5 1" />
+                    <FontIcon Grid.Column="0" Grid.Row="1"
+                              FontFamily="{StaticResource MaterialDesignIcons}"
+                              Glyph="{x:Bind ico:MaterialDesignIcons.SortCalendarAscending}"
+                              Height="22" />
+                    <DatePicker Grid.Column="1" Grid.Row="1"
+                                HorizontalAlignment="Stretch"
+                                SelectedDate = "{x:Bind ViewModel.Provider.Authorization, Mode=TwoWay,Converter={StaticResource toDateTimeOffsetConverter}}"
+                                IsEnabled = "{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+
+                <!--Date Expire -->
+                <Grid Grid.Column="1"
+                      cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                    <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.Expiration}"
+                           Margin="5 1" />
+                    <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.SortCalendarDescending}"
+                          Height="22" />
+                    <DatePicker Grid.Column="1" Grid.Row="1"
+                                HorizontalAlignment="Stretch"
+                                SelectedDate = "{x:Bind ViewModel.Provider.Expiration, Mode=TwoWay,Converter={StaticResource toDateTimeOffsetConverter}}"
+                                IsEnabled = "{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--Timbrado + BankAccount-->
+            <Grid cc:GridPlus.ColumnDefinitions="*,*" ColumnSpacing="15">
+
+                <!--Bank-->
+                <Grid Grid.Column="0"
+                      cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                    <TextBlock Grid.Column="1" Grid.Row="0"
+                               Text="{x:Bind lg:Lang.Bank}"
+                               Margin="5 1" />
+                    <FontIcon Grid.Column="0" Grid.Row="1"
+                              FontFamily="{StaticResource MaterialDesignIcons}"
+                              Glyph="{x:Bind ico:MaterialDesignIcons.Bank}"
+                              Height="22" />
+                    <TextBox Grid.Column="1" Grid.Row="1"
+                             Text="{x:Bind ViewModel.Provider.BankName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Bank}"
+                             CharacterCasing="Upper"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+
+                <!--Bank Account-->
+                <Grid Grid.Column="1"
+                      cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                    <TextBlock Grid.Column="1" Grid.Row="0"
+                               Text="{x:Bind lg:Lang.AccountNumber}"
+                               Margin="5 1" />
+                    <FontIcon Grid.Column="0" Grid.Row="1"
+                              FontFamily="{StaticResource MaterialDesignIcons}"
+                              Glyph="{x:Bind ico:MaterialDesignIcons.BriefcaseAccountOutline}"
+                              Height="22" />
+                    <TextBox Grid.Column="1" Grid.Row="1"
+                             Text="{x:Bind ViewModel.Provider.BankAccountNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.AccountNumber}"
+                             CharacterCasing="Upper"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--City-->
+            <Grid cc:GridPlus.ColumnDefinitions="Auto, *, Auto" cc:GridPlus.RowDefinitions="Auto, Auto">
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.City}"
+                           Margin="5 1" />
+                <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.City}"
+                          Height="22" />
+                <TextBox Grid.Column="1" Grid.Row="1"
+                         Text="{x:Bind ViewModel.CityName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="{x:Bind lg:Lang.City_Name}"
+                         IsReadOnly="True"
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                <cc:ButtonPlus Grid.Column="2" Grid.Row="1"
+                               Width="40"
+                               FontImageFamily="{StaticResource MaterialDesignIcons}"
+                               Glyph="{x:Bind ico:MaterialDesignIcons.Magnify}"
+                               Style="{StaticResource ButtonImage.NormaStyle}"
+                               ToolTipService.ToolTip="{x:Bind lg:Lang.Search}"
+                               Command="{x:Bind ViewModel.SearchCityCommand}"
+                               VerticalAlignment="Bottom"
+                               Height="33"
+                               IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}" />
+            </Grid>
+
+            <!--PaymentType-->
+            <Grid cc:GridPlus.ColumnDefinitions="Auto, *, Auto" cc:GridPlus.RowDefinitions="Auto, Auto">
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.PaymentType}"
+                           Margin="5 1" />
+                <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.Cash100}"
+                          Height="22" />
+                <TextBox Grid.Column="1" Grid.Row="1"
+                         Text="{x:Bind ViewModel.PaymentType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="{x:Bind lg:Lang.PaymentType}"
+                         IsReadOnly="True"
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                <cc:ButtonPlus Grid.Column="2" Grid.Row="1"
+                               Width="40"
+                               FontImageFamily="{StaticResource MaterialDesignIcons}"
+                               Glyph="{x:Bind ico:MaterialDesignIcons.Magnify}"
+                               Style="{StaticResource ButtonImage.NormaStyle}"
+                               ToolTipService.ToolTip="{x:Bind lg:Lang.Search}"
+                               Command="{x:Bind ViewModel.SearchPaymentTypeCommand}"
+                               VerticalAlignment="Bottom"
+                               Height="33"
+                               IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}" />
+            </Grid>
+
+            <!--ProviderType-->
+            <Grid cc:GridPlus.ColumnDefinitions="Auto, *, Auto" cc:GridPlus.RowDefinitions="Auto, Auto">
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.ProviderType}"
+                           Margin="5 1" />
+                <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.BriefcaseAccount}"
+                          Height="22" />
+                <TextBox Grid.Column="1" Grid.Row="1"
+                         Text="{x:Bind ViewModel.ProviderType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="{x:Bind lg:Lang.ProviderType}"
+                         IsReadOnly="True"
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                <cc:ButtonPlus Grid.Column="2" Grid.Row="1"
+                               Width="40"
+                               FontImageFamily="{StaticResource MaterialDesignIcons}"
+                               Glyph="{x:Bind ico:MaterialDesignIcons.Magnify}"
+                               Style="{StaticResource ButtonImage.NormaStyle}"
+                               ToolTipService.ToolTip="{x:Bind lg:Lang.Search}"
+                               Command="{x:Bind ViewModel.SearchProviderTypeCommand}"
+                               VerticalAlignment="Bottom"
+                               Height="33"
+                               IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}" />
+            </Grid>
+
+            <ProgressBar Grid.Row="0"
+                     Style="{StaticResource ProgressBarStyle}"
+                     Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
+            <Grid Margin="0 25 0 0">
+                <ScrollViewer>
+                    <VariableSizedWrapGrid ItemHeight="40"
+                                           ItemWidth="150"
+                                           Orientation="Horizontal"
+                                           HorizontalAlignment="Center">
+                        <!-- Add -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Add}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.CreateNew}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.PlusThick}"
+                                       Command="{x:Bind ViewModel.CreateCommand}"
+                                       IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <!-- edit -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Edit}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.ModifyRecord}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.Pencil}"
+                                       Command="{x:Bind ViewModel.EditCommand}"
+                                       IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <!-- cancel -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Cancel}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.Cancel}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.Broom}"
+                                       Command="{x:Bind ViewModel.CancelCommand}" />
+                        <!-- Save -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.AccentStyle}"
+                                       ContentText="{x:Bind lg:Lang.Save}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.Save}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.ContentSaveOutline}"
+                                       Command="{x:Bind ViewModel.SaveCommand}"
+                                       IsEnabled="{x:Bind ViewModel.IsBusy,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                    </VariableSizedWrapGrid>
+                </ScrollViewer>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

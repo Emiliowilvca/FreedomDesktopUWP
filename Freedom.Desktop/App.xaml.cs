@@ -56,6 +56,7 @@ namespace Freedom.Desktop
 
             AppEssential.InitializeServiceProvider(services.BuildServiceProvider());
 
+
         }
 
         

@@ -163,11 +163,9 @@
                          HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
                          IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
             </Grid>
-            
             <muxc:ProgressBar 
                      Style="{StaticResource ProgressBarStyle}"
                      Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
-
             <!--Buttons-->
             <Grid 
                   Margin="10 25 0 0">

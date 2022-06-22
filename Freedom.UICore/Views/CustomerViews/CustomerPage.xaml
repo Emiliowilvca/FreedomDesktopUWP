@@ -1,0 +1,484 @@
+﻿<Page
+    x:Class="Freedom.UICore.Views.CustomerViews.CustomerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Freedom.UICore.Views.CustomerViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:ico="using:Freedom.Frontend.FontIcons"
+    xmlns:cc="using:Freedom.UICore.Controls"
+    xmlns:lg="using:Freedom.Utility.Langs"  
+    xmlns:ui="using:CommunityToolkit.WinUI.UI"
+    NavigationCacheMode="Enabled"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid cc:GridPlus.ColumnDefinitions="*, 6*, *" ScrollViewer.VerticalScrollMode="Auto">
+        <StackPanel Grid.Column="1">
+
+            <!--Name + Fantasy-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *" ColumnSpacing="15">
+                <!--FullName-->
+                <Grid Grid.Column="0" cc:GridPlus.ColumnDefinitions="Auto, *">                    
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.AccountMultiple}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             x:Name="txtName"
+                             Text="{x:Bind ViewModel.Customer.FullName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Name}"
+                             CharacterCasing="Upper"
+                             Header="{x:Bind lg:Lang.Name}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                <!--Fantasy or comercial name-->
+                <Grid Grid.Column="1" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.FileAccount}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             Text="{x:Bind ViewModel.Customer.TradeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.BusinessName}"
+                             CharacterCasing="Upper"
+                             Header="{x:Bind lg:Lang.BusinessName}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--Address + Ruc-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *" ColumnSpacing="15">
+                <!--Address-->
+                <Grid Grid.Column="0" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.MapMarkerAlertOutline}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             Text="{x:Bind ViewModel.Customer.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Address}"
+                             CharacterCasing="Upper"
+                             Header="{x:Bind lg:Lang.Address}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                <!--Ruc-->
+                <Grid Grid.Column="1" cc:GridPlus.ColumnDefinitions="Auto, *">
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.CardAccountDetailsOutline}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             Text="{x:Bind ViewModel.Customer.Ruc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.TaxpayerIdNumber}"
+                             CharacterCasing="Upper"
+                             Header="{x:Bind lg:Lang.TaxpayerIdNumber}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--Phone + Mobile1 + Mobile2-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *, *" ColumnSpacing="15">
+
+                <!--Phone-->
+                <Grid Grid.Column="0" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.Phone}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.Customer.Telephone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.PhoneNumber}"
+                             Header="{x:Bind lg:Lang.PhoneNumber}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+
+                <!--Mobile 1-->
+                <Grid Grid.Column="1" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.CellphoneText}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.Customer.Mobile1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Mobile}"
+                             Header="{x:Bind lg:Lang.Mobile}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+
+                <!--Mobile 2-->
+                <Grid Grid.Column="2" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.CellphoneText}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.Customer.Mobile2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Mobile}"
+                             Header="{x:Bind lg:Lang.Mobile}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--Email + WorkPlace + workPhone -->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *, *" ColumnSpacing="15">
+                <!--Email-->
+                <Grid Grid.Column="0" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.Email}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             Text="{x:Bind ViewModel.Customer.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Email}"
+                             Header="{x:Bind lg:Lang.Email}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                <!--WorkPlace-->
+                <Grid Grid.Column="1" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.AccountSchoolOutline}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.Customer.WorkPlace, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.workplace}"
+                             Header="{x:Bind lg:Lang.workplace}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                <!--WorkPhone-->
+                <Grid Grid.Column="2" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.PhoneClassic}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.Customer.Workphone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.WorkPhone}"
+                             Header="{x:Bind lg:Lang.WorkPhone}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--City + Category-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *" ColumnSpacing="15">
+
+                <!--City-->
+                <Grid Grid.Column="0" cc:GridPlus.ColumnDefinitions="Auto, *, Auto" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.City}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.CityName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.City}"
+                             Header="{x:Bind lg:Lang.City}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsReadOnly="True"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                    <cc:ButtonPlus Grid.Column="2" Grid.Row="1"
+                               Width="40"
+                               FontImageFamily="{StaticResource MaterialDesignIcons}"
+                               Glyph="{x:Bind ico:MaterialDesignIcons.Magnify}"
+                               Style="{StaticResource ButtonImage.NormaStyle}"
+                               ToolTipService.ToolTip="{x:Bind lg:Lang.Search}"
+                               Command="{x:Bind ViewModel.SearchCityCommand}"
+                               VerticalAlignment="Bottom"
+                               Height="33"
+                               IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                <!--Category-->
+                <Grid Grid.Column="1" cc:GridPlus.ColumnDefinitions="Auto, *, Auto" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.AccountGroup}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.CategoryName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Category}"
+                             Header="{x:Bind lg:Lang.Category}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsReadOnly="True"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                    <cc:ButtonPlus Grid.Column="2" Grid.Row="1"
+                               Width="40"
+                               FontImageFamily="{StaticResource MaterialDesignIcons}"
+                               Glyph="{x:Bind ico:MaterialDesignIcons.Magnify}"
+                               Style="{StaticResource ButtonImage.NormaStyle}"
+                               ToolTipService.ToolTip="{x:Bind lg:Lang.Search}"
+                               Command="{x:Bind ViewModel.SearchCategoryCommand}"
+                               VerticalAlignment="Bottom"
+                               Height="33"
+                               IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+
+            </Grid>
+
+            <!--Branch + Route-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *" ColumnSpacing="15">
+
+                <!--Branch-->
+                <Grid Grid.Column="0" cc:GridPlus.ColumnDefinitions="Auto, *, Auto" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.AccountTieHat}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.BranchName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Branch}"
+                             Header="{x:Bind lg:Lang.Branch}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsReadOnly="True"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                    <cc:ButtonPlus Grid.Column="2" Grid.Row="1"
+                               Width="40"
+                               FontImageFamily="{StaticResource MaterialDesignIcons}"
+                               Glyph="{x:Bind ico:MaterialDesignIcons.Magnify}"
+                               Style="{StaticResource ButtonImage.NormaStyle}"
+                               ToolTipService.ToolTip="{x:Bind lg:Lang.Search}"
+                               Command="{x:Bind ViewModel.SearchBranchCommand}"
+                               VerticalAlignment="Bottom"
+                               Height="33"
+                               IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                <!--Route-->
+                <Grid Grid.Column="1" cc:GridPlus.ColumnDefinitions="Auto, *, Auto" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.Highway}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.RouteName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Route}"
+                             Header="{x:Bind lg:Lang.Route}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsReadOnly="True"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                    <cc:ButtonPlus Grid.Column="2" Grid.Row="1"
+                               Width="40"
+                               FontImageFamily="{StaticResource MaterialDesignIcons}"
+                               Glyph="{x:Bind ico:MaterialDesignIcons.Magnify}"
+                               Style="{StaticResource ButtonImage.NormaStyle}"
+                               ToolTipService.ToolTip="{x:Bind lg:Lang.Search}"
+                               Command="{x:Bind ViewModel.SearchRouteCommand}"
+                               VerticalAlignment="Bottom"
+                               Height="33"
+                               IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--Partner + PartnerCI-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *" ColumnSpacing="15">
+                <!--Partner-->
+                <Grid Grid.Column="0" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.AccountHeart}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.Customer.Partner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Spouse}"
+                             Header="{x:Bind lg:Lang.Spouse}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                <!--Parnert CI-->
+                <Grid Grid.Column="1" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.BadgeAccount}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.PartnerCI, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.SpouseIdentification}"
+                             Header="{x:Bind lg:Lang.SpouseIdentification}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--DateResidence + DateWonkerIniti + WorkStartDate-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *, *" ColumnSpacing="15">
+                <!--DateResidence-->
+                <Grid Grid.Column="0" cc:GridPlus.ColumnDefinitions="Auto, *">                  
+                    <FontIcon Grid.Column="0" 
+                              Glyph="{x:Bind ico:MaterialDesignIcons.HomeClock}"
+                              Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"   
+                             Header="{x:Bind lg:Lang.ResidenceDate}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             Text="{x:Bind ViewModel.DateResidence, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+
+                <!--BirthDate -->
+                <Grid Grid.Column="1" cc:GridPlus.ColumnDefinitions="Auto, *">
+                    <FontIcon Grid.Column="0" Grid.Row="1"
+                              Glyph="{x:Bind ico:MaterialDesignIcons.CakeVariant}"
+                              Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1" Grid.Row="1"                                  
+                             Header="{x:Bind lg:Lang.Birthdate}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             Text="{x:Bind ViewModel.BirthDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                
+                <!--WorkStartDate -->
+                <Grid Grid.Column="2" cc:GridPlus.ColumnDefinitions="Auto, *">
+                    <FontIcon Grid.Column="0" 
+                              Glyph="{x:Bind ico:MaterialDesignIcons.WrenchClock}"
+                              Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"                             
+                             Header="{x:Bind lg:Lang.WorkStartDate}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             Text="{x:Bind ViewModel.WorkStartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--Children + Max Discount + gender-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *, * " ColumnSpacing="15">
+                <!--Children-->
+                <Grid Grid.Column="0" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"
+                              Glyph="{x:Bind ico:MaterialDesignIcons.HumanFemaleBoy}"
+                              Style="{StaticResource TextboxIconHeaderStyle}"/>
+                    <TextBox Grid.Column="1" Grid.Row="1"
+                             Header="{x:Bind lg:Lang.Children}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             Text="{x:Bind ViewModel.Childrens, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Children}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                <!--Max DiscountPercent-->
+                <Grid Grid.Column="1" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"
+                              Glyph="{x:Bind ico:MaterialDesignIcons.Percent}"
+                              Style="{StaticResource TextboxIconHeaderStyle}"/>
+                    <TextBox Grid.Column="1" Grid.Row="1"
+                             Header="{x:Bind lg:Lang.MaxDiscountPercent}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             Text="{x:Bind ViewModel.MaxDiscountPercent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="0.00"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+
+                <!--Gender-->
+                <Grid Grid.Column="2" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0" Grid.Row="1"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.GenderMaleFemale}"
+                          Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <ComboBox Grid.Column="1"  
+                              HorizontalAlignment="Stretch" 
+                              Header="{x:Bind lg:Lang.Gender}"
+                              HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                              ItemsSource="{x:Bind ViewModel.SexualGenderCollection}"
+                              SelectedValue="{x:Bind ViewModel.Customer.Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                                                     Converter={StaticResource NullToZeroConverters}}"
+                              DisplayMemberPath="GenderName"
+                              SelectedValuePath="Id"                           
+                              PlaceholderText="{x:Bind lg:Lang.Gender}"                         
+                              IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}"/>
+                </Grid>
+            </Grid>
+
+            <!--Goods + Note-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *" ColumnSpacing="15">
+                <!--Good-->
+                <Grid Grid.Column="0" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.CarConvertible}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.Customer.Goods, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Properties}"
+                             Header="{x:Bind lg:Lang.Properties}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+                <!--Note-->
+                <Grid Grid.Column="1" cc:GridPlus.ColumnDefinitions="Auto, *" >
+                    <FontIcon Grid.Column="0"                           
+                             Glyph="{x:Bind ico:MaterialDesignIcons.CommentAccountOutline}"
+                             Style="{StaticResource TextboxIconHeaderStyle}" />
+                    <TextBox Grid.Column="1"  
+                             CharacterCasing="Upper"
+                             Text="{x:Bind ViewModel.Customer.Note, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Bind lg:Lang.Remark}"
+                             Header="{x:Bind lg:Lang.Remark}"
+                             HeaderTemplate="{StaticResource Textbox.HeaderTemplate}"
+                             IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--Checkbox-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *, *, *" Margin="20 10 0 0">
+                <CheckBox Grid.Column="0" Content="{x:Bind lg:Lang.OwnHouse}"
+                          IsChecked="{x:Bind ViewModel.Customer.OwnHouse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                          IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}"/>
+
+                <CheckBox Grid.Column="1" Content="{x:Bind lg:Lang.SendBillCollector}"
+                          IsChecked="{x:Bind ViewModel.Customer.SendMoneyColletor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                          IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}"/>
+
+                <CheckBox Grid.Column="2" Content="{x:Bind lg:Lang.LendProducts}"
+                          IsChecked="{x:Bind ViewModel.Customer.LendProducts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                          IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}"/>
+
+                <CheckBox Grid.Column="3" Content="{x:Bind lg:Lang.Credit}"
+                          IsChecked="{x:Bind ViewModel.Customer.Credit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                          IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}"/>
+            </Grid>
+
+            <ProgressBar Grid.Row="0"
+                     Style="{StaticResource ProgressBarStyle}"
+                     Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
+            <!--Buttons-->
+            <Grid Margin="0 10 0 0">
+                <ScrollViewer>
+                    <VariableSizedWrapGrid ItemHeight="40"
+                                           ItemWidth="150"
+                                           Orientation="Horizontal"
+                                           HorizontalAlignment="Center" >
+                        <!-- Add -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Add}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.CreateNew}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.PlusThick}"
+                                       Command="{x:Bind ViewModel.CreateCommand}"
+                                       IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <!-- edit -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Edit}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.ModifyRecord}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.Pencil}"
+                                       Command="{x:Bind ViewModel.EditCommand}"
+                                       IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <!-- cancel -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Cancel}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.Cancel}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.Broom}"
+                                       Command="{x:Bind ViewModel.CancelCommand}"/>
+                        <!-- Save -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.AccentStyle}"
+                                       ContentText="{x:Bind lg:Lang.Save}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.Save}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"                                       
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.ContentSaveOutline}"                        
+                                       Command="{x:Bind ViewModel.SaveCommand}"
+                                       IsEnabled="{x:Bind ViewModel.IsBusy,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}"/>
+                    </VariableSizedWrapGrid>
+                </ScrollViewer>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

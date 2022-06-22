@@ -17,7 +17,7 @@ using Freedom.Utility.Enums;
 using Freedom.Utility.Langs;
 using Freedom.Utility.Models.BaseEntity;
 using Freedom.Utility.Models.Dto;
-using Microsoft.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;

@@ -195,7 +195,74 @@
     <Compile Include="ViewModels\BankViews\BankReleaseCheckViewModel.cs" />
     <Compile Include="ViewModels\BankViews\BankTransfersViewModel.cs" />
     <Compile Include="ViewModels\BankViews\BankViewModel.cs" />
+    <Compile Include="ViewModels\CarrierViews\CarrierViewModel.cs" />
+    <Compile Include="ViewModels\CashBoxViews\CashBoxCloseViewModel.cs" />
+    <Compile Include="ViewModels\CashBoxViews\CashBoxCountViewModel.cs" />
+    <Compile Include="ViewModels\CashBoxViews\CashBoxOpeningViewModel.cs" />
+    <Compile Include="ViewModels\CompanyViews\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\CountryViews\CityViewModel.cs" />
+    <Compile Include="ViewModels\CountryViews\CountryViewModel.cs" />
+    <Compile Include="ViewModels\CountryViews\StateViewModel.cs" />
+    <Compile Include="ViewModels\CountryViews\TownViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViews\BranchViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViews\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViews\CustomerAccountViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViews\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViews\RouteViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViews\ZoneViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeViews\EmployeeViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeViews\JobPostViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeViews\JobSectorViewModel.cs" />
+    <Compile Include="ViewModels\ExpenceViews\ConsumptionViewModel.cs" />
+    <Compile Include="ViewModels\ExpenceViews\ExpenceTypeViewModel.cs" />
+    <Compile Include="ViewModels\ExpenceViews\ExpenceViewModel.cs" />
+    <Compile Include="ViewModels\FeesViews\FeesGeneratorViewModel.cs" />
+    <Compile Include="ViewModels\InventoryViews\InventoryViewModel.cs" />
     <Compile Include="ViewModels\MainViews\HomeViewModel.cs" />
+    <Compile Include="ViewModels\MoneyViews\MoneyDenominationViewModel.cs" />
+    <Compile Include="ViewModels\MoneyViews\MoneyViewModel.cs" />
+    <Compile Include="ViewModels\OperationViews\OperationTypeViewModel.cs" />
+    <Compile Include="ViewModels\PaymentViews\CustomerFeesViewModel.cs" />
+    <Compile Include="ViewModels\PaymentViews\CustomerPaymentViewModel.cs" />
+    <Compile Include="ViewModels\PaymentViews\PaymentTypeViewModel.cs" />
+    <Compile Include="ViewModels\PaymentViews\ProviderPaymentViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\ApplyViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\BrandViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\DrugViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\GroupViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\MeasureViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\PackageViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\PriceTagViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\PriorityViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\ProductPriceViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\ProductViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\SectorProductViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\SourceProductViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\SubGroupViewModel.cs" />
+    <Compile Include="ViewModels\ProductViews\WayAdminViewModel.cs" />
+    <Compile Include="ViewModels\ProviderViews\ProviderTypeViewModel.cs" />
+    <Compile Include="ViewModels\ProviderViews\ProviderViewModel.cs" />
+    <Compile Include="ViewModels\PurchaseViews\PurchaseOrderViewModel.cs" />
+    <Compile Include="ViewModels\PurchaseViews\PurchaseViewModel.cs" />
+    <Compile Include="ViewModels\PurchaseViews\PurchaseWithholdingTaxViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\BankDepositReportViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\CustomerFeesReportViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\CustomerPaymentReportViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\InventoryReportViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\KardexReportViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\OrderNotDeliveredViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\PriceListViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\ProviderFeesReportViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\ProviderPaymentReportViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\PurchaseReportViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\SaleReportViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\TransferReportViewModel.cs" />
+    <Compile Include="ViewModels\ReportViews\UnoWebViewModel.cs" />
+    <Compile Include="ViewModels\ReturnViews\ReasonReturnViewModel.cs" />
+    <Compile Include="ViewModels\ReturnViews\ReturnPurchaseViewModel.cs" />
+    <Compile Include="ViewModels\ReturnViews\SaleReturnViewModel.cs" />
+    <Compile Include="ViewModels\SaleViews\SaleOrderViewModel.cs" />
+    <Compile Include="ViewModels\SaleViews\SaleViewModel.cs" />
     <Compile Include="ViewModels\SearchViews\ApplySearchViewModel.cs" />
     <Compile Include="ViewModels\SearchViews\BankAccountSearchViewModel.cs" />
     <Compile Include="ViewModels\SearchViews\BankAccountTypeSearchViewModel.cs" />
@@ -242,8 +309,13 @@
     <Compile Include="ViewModels\ShellViews\NewUserViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\RecoverPasswordViewModel.cs" />
     <Compile Include="ViewModels\ShellViews\UrlBaseViewModel.cs" />
+    <Compile Include="ViewModels\ShopViews\BoxViewModel.cs" />
+    <Compile Include="ViewModels\ShopViews\ShopRuleViewModel.cs" />
+    <Compile Include="ViewModels\ShopViews\ShopViewModel.cs" />
     <Compile Include="ViewModels\StatusBarViews\StatusBarInfoViewModel.cs" />
     <Compile Include="ViewModels\StatusBarViews\StatusBarNotifyViewModel.cs" />
+    <Compile Include="ViewModels\TransferViews\TransferProductViewModel.cs" />
+    <Compile Include="ViewModels\VehicleViews\VehicleViewModel.cs" />
     <Compile Include="Views\BankViews\BankAccountPage.xaml.cs">
       <DependentUpon>BankAccountPage.xaml</DependentUpon>
     </Compile>
@@ -280,8 +352,212 @@
     <Compile Include="Views\BankViews\BankTransfersPage.xaml.cs">
       <DependentUpon>BankTransfersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CarrierViews\CarrierPage.xaml.cs">
+      <DependentUpon>CarrierPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashBoxViews\CashBoxClosePage.xaml.cs">
+      <DependentUpon>CashBoxClosePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashBoxViews\CashBoxCountPage.xaml.cs">
+      <DependentUpon>CashBoxCountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashBoxViews\CashBoxOpeningPage.xaml.cs">
+      <DependentUpon>CashBoxOpeningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompanyViews\CompanyPage.xaml.cs">
+      <DependentUpon>CompanyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CountryViews\CityPage.xaml.cs">
+      <DependentUpon>CityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CountryViews\CountryPage.xaml.cs">
+      <DependentUpon>CountryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CountryViews\StatePage.xaml.cs">
+      <DependentUpon>StatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CountryViews\TownPage.xaml.cs">
+      <DependentUpon>TownPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\BranchPage.xaml.cs">
+      <DependentUpon>BranchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\CategoryPage.xaml.cs">
+      <DependentUpon>CategoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\CustomerAccountPage.xaml.cs">
+      <DependentUpon>CustomerAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\CustomerPage.xaml.cs">
+      <DependentUpon>CustomerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\RoutePage.xaml.cs">
+      <DependentUpon>RoutePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\ZonePage.xaml.cs">
+      <DependentUpon>ZonePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DialogContentViews\ContentDialogContent.xaml.cs">
+      <DependentUpon>ContentDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeViews\EmployeePage.xaml.cs">
+      <DependentUpon>EmployeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeViews\JobPostPage.xaml.cs">
+      <DependentUpon>JobPostPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeViews\JobSectorPage.xaml.cs">
+      <DependentUpon>JobSectorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExpenceViews\ConsumptionPage.xaml.cs">
+      <DependentUpon>ConsumptionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExpenceViews\ExpencePage.xaml.cs">
+      <DependentUpon>ExpencePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExpenceViews\ExpenceTypePage.xaml.cs">
+      <DependentUpon>ExpenceTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FeesViews\FeesGeneratorPage.xaml.cs">
+      <DependentUpon>FeesGeneratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryViews\InventoryPage.xaml.cs">
+      <DependentUpon>InventoryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainViews\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MoneyViews\MoneyDenominationPage.xaml.cs">
+      <DependentUpon>MoneyDenominationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MoneyViews\MoneyPage.xaml.cs">
+      <DependentUpon>MoneyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OperationViews\OperationTypePage.xaml.cs">
+      <DependentUpon>OperationTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentViews\CustomerFeesPage.xaml.cs">
+      <DependentUpon>CustomerFeesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentViews\CustomerPaymentPage.xaml.cs">
+      <DependentUpon>CustomerPaymentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentViews\PaymentTypePage.xaml.cs">
+      <DependentUpon>PaymentTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentViews\ProviderPaymentPage.xaml.cs">
+      <DependentUpon>ProviderPaymentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\ApplyPage.xaml.cs">
+      <DependentUpon>ApplyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\BrandPage.xaml.cs">
+      <DependentUpon>BrandPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\DrugPage.xaml.cs">
+      <DependentUpon>DrugPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\GroupPage.xaml.cs">
+      <DependentUpon>GroupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\MeasurePage.xaml.cs">
+      <DependentUpon>MeasurePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\PackagePage.xaml.cs">
+      <DependentUpon>PackagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\PriceTagPage.xaml.cs">
+      <DependentUpon>PriceTagPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\PriorityPage.xaml.cs">
+      <DependentUpon>PriorityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\ProductPage.xaml.cs">
+      <DependentUpon>ProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\ProductPricePage.xaml.cs">
+      <DependentUpon>ProductPricePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\SectorProductPage.xaml.cs">
+      <DependentUpon>SectorProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\SourceProductPage.xaml.cs">
+      <DependentUpon>SourceProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\SubGroupPage.xaml.cs">
+      <DependentUpon>SubGroupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViews\WayAdminPage.xaml.cs">
+      <DependentUpon>WayAdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProviderViews\ProviderPage.xaml.cs">
+      <DependentUpon>ProviderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProviderViews\ProviderTypePage.xaml.cs">
+      <DependentUpon>ProviderTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseViews\PurchaseOrderPage.xaml.cs">
+      <DependentUpon>PurchaseOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseViews\PurchasePage.xaml.cs">
+      <DependentUpon>PurchasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseViews\PurchaseWithholdingTaxPage.xaml.cs">
+      <DependentUpon>PurchaseWithholdingTaxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\BankDepositReportPage.xaml.cs">
+      <DependentUpon>BankDepositReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\CustomerFeesReportPage.xaml.cs">
+      <DependentUpon>CustomerFeesReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\CustomerPaymentReportPage.xaml.cs">
+      <DependentUpon>CustomerPaymentReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\InventoryReportPage.xaml.cs">
+      <DependentUpon>InventoryReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\KardexReportPage.xaml.cs">
+      <DependentUpon>KardexReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\OrderNotDeliveredPage.xaml.cs">
+      <DependentUpon>OrderNotDeliveredPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\PriceListPage.xaml.cs">
+      <DependentUpon>PriceListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\ProviderFeesReportPage.xaml.cs">
+      <DependentUpon>ProviderFeesReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\ProviderPaymentReportPage.xaml.cs">
+      <DependentUpon>ProviderPaymentReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\PurchaseReportPage.xaml.cs">
+      <DependentUpon>PurchaseReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\SaleReportPage.xaml.cs">
+      <DependentUpon>SaleReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\TransferReportPage.xaml.cs">
+      <DependentUpon>TransferReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportViews\UnoWebPage.xaml.cs">
+      <DependentUpon>UnoWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReturnViews\ReasonReturnPage.xaml.cs">
+      <DependentUpon>ReasonReturnPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReturnViews\ReturnPurchasePage.xaml.cs">
+      <DependentUpon>ReturnPurchasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReturnViews\SaleReturnPage.xaml.cs">
+      <DependentUpon>SaleReturnPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaleViews\SaleOrderPage.xaml.cs">
+      <DependentUpon>SaleOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaleViews\SalePage.xaml.cs">
+      <DependentUpon>SalePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SearchViews\ApplySearchPage.xaml.cs">
       <DependentUpon>ApplySearchPage.xaml</DependentUpon>
@@ -403,6 +679,9 @@
     <Compile Include="Views\SettingViews\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Setting\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShellViews\ConfirmEmailPage.xaml.cs">
       <DependentUpon>ConfirmEmailPage.xaml</DependentUpon>
     </Compile>
@@ -421,11 +700,26 @@
     <Compile Include="Views\ShellViews\UrlBasePage.xaml.cs">
       <DependentUpon>UrlBasePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ShopViews\BoxPage.xaml.cs">
+      <DependentUpon>BoxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShopViews\ShopPage.xaml.cs">
+      <DependentUpon>ShopPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShopViews\ShopRulePage.xaml.cs">
+      <DependentUpon>ShopRulePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StatusBarViews\StatusBarInfoPage.xaml.cs">
       <DependentUpon>StatusBarInfoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StatusBarViews\StatusBarNotifyPage.xaml.cs">
       <DependentUpon>StatusBarNotifyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransferViews\TransferProductPage.xaml.cs">
+      <DependentUpon>TransferProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicleViews\VehiclePage.xaml.cs">
+      <DependentUpon>VehiclePage.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Freedom.UICore.rd.xml" />
   </ItemGroup>
@@ -477,6 +771,10 @@
     <ProjectReference Include="..\Freedom.Core\Freedom.Core.csproj">
       <Project>{f07307b2-93fd-488c-b73e-7dbc5f9abe4c}</Project>
       <Name>Freedom.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Freedom.Report\Freedom.Report.csproj">
+      <Project>{0734F6F6-9819-4F67-A4CB-F1F501EB9886}</Project>
+      <Name>Freedom.Report</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -580,7 +878,279 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\CarrierViews\CarrierPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CashBoxViews\CashBoxClosePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CashBoxViews\CashBoxCountPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CashBoxViews\CashBoxOpeningPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CompanyViews\CompanyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CountryViews\CityPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CountryViews\CountryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CountryViews\StatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CountryViews\TownPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerViews\BranchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerViews\CategoryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerViews\CustomerAccountPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerViews\CustomerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerViews\RoutePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerViews\ZonePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DialogContentViews\ContentDialogContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EmployeeViews\EmployeePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EmployeeViews\JobPostPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EmployeeViews\JobSectorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ExpenceViews\ConsumptionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ExpenceViews\ExpencePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ExpenceViews\ExpenceTypePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FeesViews\FeesGeneratorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\InventoryViews\InventoryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\MainViews\HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MoneyViews\MoneyDenominationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MoneyViews\MoneyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OperationViews\OperationTypePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PaymentViews\CustomerFeesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PaymentViews\CustomerPaymentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PaymentViews\PaymentTypePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PaymentViews\ProviderPaymentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\ApplyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\BrandPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\DrugPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\GroupPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\MeasurePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\PackagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\PriceTagPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\PriorityPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\ProductPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\ProductPricePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\SectorProductPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\SourceProductPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\SubGroupPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductViews\WayAdminPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProviderViews\ProviderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProviderViews\ProviderTypePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseViews\PurchaseOrderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseViews\PurchasePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseViews\PurchaseWithholdingTaxPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\BankDepositReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\CustomerFeesReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\CustomerPaymentReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\InventoryReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\KardexReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\OrderNotDeliveredPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\PriceListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\ProviderFeesReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\ProviderPaymentReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\PurchaseReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\SaleReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\TransferReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportViews\UnoWebPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReturnViews\ReasonReturnPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReturnViews\ReturnPurchasePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReturnViews\SaleReturnPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SaleViews\SaleOrderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SaleViews\SalePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -744,6 +1314,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Setting\SettingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ShellViews\ConfirmEmailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -768,6 +1342,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ShopViews\BoxPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ShopViews\ShopPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ShopViews\ShopRulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\StatusBarViews\StatusBarInfoPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -775,6 +1361,14 @@
     <Page Include="Views\StatusBarViews\StatusBarNotifyPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TransferViews\TransferProductPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\VehicleViews\VehiclePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

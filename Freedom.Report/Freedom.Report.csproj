@@ -120,7 +120,13 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BaseReport\BaseReports.cs" />
+    <Compile Include="FileInterface\IFileService.cs" />
+    <Compile Include="FileImplement\FileService.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportImplement\BankDepositReport.cs" />
+    <Compile Include="ReportInterface\IBankDepositReport.cs" />
     <EmbeddedResource Include="Properties\Freedom.Report.rd.xml" />
   </ItemGroup>
   <ItemGroup>

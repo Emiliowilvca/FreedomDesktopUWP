@@ -1,0 +1,242 @@
+﻿<Page
+    x:Class="Freedom.UICore.Views.ShopViews.BoxPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ico="using:Freedom.Frontend.FontIcons"
+    xmlns:cc="using:Freedom.UICore.Controls"
+    xmlns:lg="using:Freedom.Utility.Langs"
+    xmlns:ui="using:CommunityToolkit.WinUI.UI"
+    mc:Ignorable="d"
+    NavigationCacheMode="Enabled"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid cc:GridPlus.RowDefinitions="*" cc:GridPlus.ColumnDefinitions="*, 6*, *">
+        <StackPanel Grid.Row="0" Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+
+            <!--Name-->
+            <Grid cc:GridPlus.ColumnDefinitions="Auto, *" cc:GridPlus.RowDefinitions="Auto, Auto">
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.Name }"
+                           Margin="5 1" />
+                <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.Store}"
+                          Height="22" />
+                <TextBox Grid.Column="1" Grid.Row="1"
+                         Text="{x:Bind ViewModel.Box.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="{x:Bind lg:Lang.Name}"
+                         CharacterCasing="Upper"
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+            </Grid>
+
+            <!--Shop-->
+            <Grid cc:GridPlus.ColumnDefinitions="Auto, *, Auto" cc:GridPlus.RowDefinitions="Auto, Auto">
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.Shop}"
+                           Margin="5 1" />
+                <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.City}"
+                          Height="22" />
+                <TextBox Grid.Column="1" Grid.Row="1"
+                         Text="{x:Bind ViewModel.ShopName , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="{x:Bind lg:Lang.Shop}"
+                         IsReadOnly="True"
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                <cc:ButtonPlus Grid.Column="2" Grid.Row="1"
+                               Width="40"
+                               FontImageFamily="{StaticResource MaterialDesignIcons}"
+                               Glyph="{x:Bind ico:MaterialDesignIcons.Magnify}"
+                               Style="{StaticResource ButtonImage.NormaStyle}"
+                               ToolTipService.ToolTip="{x:Bind lg:Lang.Search}"
+                               Command="{x:Bind ViewModel.SearchShopCommand}"
+                               VerticalAlignment="Bottom"
+                               Height="33"
+                               IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}" />
+            </Grid>
+
+            <!--Money-->
+            <Grid cc:GridPlus.ColumnDefinitions="Auto, *, Auto" cc:GridPlus.RowDefinitions="Auto, Auto">
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{x:Bind lg:Lang.Money}"
+                           Margin="5 1" />
+                <FontIcon Grid.Column="0" Grid.Row="1"
+                          FontFamily="{StaticResource MaterialDesignIcons}"
+                          Glyph="{x:Bind ico:MaterialDesignIcons.CashMultiple}"
+                          Height="22" />
+                <TextBox Grid.Column="1" Grid.Row="1"
+                         Text="{x:Bind ViewModel.MoneyName , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="{x:Bind lg:Lang.Money}"
+                         IsReadOnly="True"
+                         IsEnabled="{x:Bind ViewModel.EnableControl, Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+                <cc:ButtonPlus Grid.Column="2" Grid.Row="1"
+                               Width="40"
+                               FontImageFamily="{StaticResource MaterialDesignIcons}"
+                               Glyph="{x:Bind ico:MaterialDesignIcons.Magnify}"
+                               Style="{StaticResource ButtonImage.NormaStyle}"
+                               ToolTipService.ToolTip="{x:Bind lg:Lang.Search}"
+                               Command="{x:Bind ViewModel.SearchMoneyCommand}"
+                               VerticalAlignment="Bottom"
+                               Height="33"
+                               IsEnabled="{x:Bind ViewModel.EnableControl, Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}" />
+            </Grid>
+
+            <!-- Invoince -->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *, *" ColumnSpacing="5">
+                <!-- Invoice since-->
+                
+                <TextBox Grid.Column="0"
+                         Header="{x:Bind lg:Lang.InvoiceSince}"
+                          PlaceholderText="{x:Bind ViewModel.InvoiceFormat, Mode=OneWay}"
+                         Text="{x:Bind ViewModel.InvoiceSince, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}" />
+                <!-- Invoice until-->                
+                <TextBox Grid.Column="1"
+                         PlaceholderText="{x:Bind ViewModel.InvoiceFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.InvoiceUntil}"
+                         Text="{x:Bind ViewModel.InvoiceUntil, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+               
+                <!-- Invoice LastCreated-->
+                <TextBox Grid.Column="2"
+                          PlaceholderText="{x:Bind ViewModel.InvoiceFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.InvoiceLastCreated}"
+                         Text="{x:Bind ViewModel.InvoiceLastCreated, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+            </Grid>
+
+            <!-- Credit Note-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *, *" ColumnSpacing="5">
+                <!-- CreditNoteSince -->
+                <TextBox Grid.Column="0"
+                         PlaceholderText="{x:Bind ViewModel.CreditNoteFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.CreditNoteSince}"
+                         Text="{x:Bind ViewModel.CreditNoteSince, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+                <!--CreditNoteUntil-->
+                <TextBox Grid.Column="1"
+                         PlaceholderText="{x:Bind ViewModel.CreditNoteFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.CreditNoteUntil}"
+                         Text="{x:Bind ViewModel.CreditNoteUntil, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}" />
+                <!-- CreditNoteLastCreted-->
+                <TextBox Grid.Column="2"
+                         PlaceholderText="{x:Bind ViewModel.CreditNoteFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.CreditNoteLastCreated}"
+                         Text="{x:Bind ViewModel.CreditNoteLastCreted, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}" />
+            </Grid>
+
+            <!-- Promisory-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *, *" ColumnSpacing="5">
+                <!--Since -->
+                <TextBox Grid.Column="0"
+                         PlaceholderText="{x:Bind ViewModel.PromissoryFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.PromissoryNoteSince}"
+                         Text="{x:Bind ViewModel.PromissorySince, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+                <!--Until-->
+                <TextBox Grid.Column="1"
+                         PlaceholderText="{x:Bind ViewModel.PromissoryFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.PromissoryNoteUntil}"
+                         Text="{x:Bind ViewModel.PromissoryUntil, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+                <!--LastCreted-->
+                <TextBox Grid.Column="2"
+                         PlaceholderText="{x:Bind ViewModel.PromissoryFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.PromissoryNoteLastCreated}"
+                         Text="{x:Bind ViewModel.PromissoryLastCreated, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+            </Grid>
+
+            <!-- Receipt-->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *, *" ColumnSpacing="5">
+                <!--Since -->
+                <TextBox Grid.Column="0"
+                         PlaceholderText="{x:Bind ViewModel.ReceiptFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.ReceiptSince}"
+                         Text="{x:Bind ViewModel.ReceiptSince, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+                <!--Until-->
+                <TextBox Grid.Column="1"
+                         PlaceholderText="{x:Bind ViewModel.ReceiptFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.ReceiptUntil}"
+                         Text="{x:Bind ViewModel.ReceiptUntil, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+                <!--LastCreted-->
+                <TextBox Grid.Column="2"
+                         PlaceholderText="{x:Bind ViewModel.ReceiptFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.ReceiptLastCreated}"
+                         Text="{x:Bind ViewModel.ReceiptLastCreated, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+            </Grid>
+
+            <!-- Return -->
+            <Grid cc:GridPlus.ColumnDefinitions="*, *, *" ColumnSpacing="5">
+                <!--Since -->
+                <TextBox Grid.Column="0"
+                         PlaceholderText="{x:Bind ViewModel.ReturnFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.ReturnNoteSince}"
+                         Text="{x:Bind ViewModel.ReturnSince, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+                <!--Until-->
+                <TextBox Grid.Column="1"
+                         PlaceholderText="{x:Bind ViewModel.ReturnFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.ReturnNoteUntil}"
+                         Text="{x:Bind ViewModel.ReturnUntil, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+                <!--LastCreted-->
+                <TextBox Grid.Column="2"
+                         PlaceholderText="{x:Bind ViewModel.ReturnFormat, Mode=OneWay}"
+                         Header="{x:Bind lg:Lang.ReturnNoteLastCreated}"
+                         Text="{x:Bind ViewModel.ReturnLastCreated, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                         IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBoolConverter}}"/>
+            </Grid>
+
+            <Grid Margin="0 25 0 0">
+                <ScrollViewer>
+                    <VariableSizedWrapGrid ItemHeight="40"
+                                           ItemWidth="150"
+                                           Orientation="Horizontal"
+                                           HorizontalAlignment="Center">
+                        <!-- Add -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Add}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.CreateNew}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.PlusThick}"
+                                       Command="{x:Bind ViewModel.CreateCommand}"
+                                       IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <!-- Edit -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Edit}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.ModifyRecord}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.Pencil}"
+                                       Command="{x:Bind ViewModel.EditCommand}"
+                                       IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <!-- Cancel -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Cancel}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.Cancel}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.Broom}"
+                                       Command="{x:Bind ViewModel.CancelCommand}" />
+                        <!-- Save -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.AccentStyle}"
+                                       ContentText="{x:Bind lg:Lang.Save}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.Save}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.ContentSaveOutline}"
+                                       Command="{x:Bind ViewModel.SaveCommand}"
+                                       IsEnabled="{x:Bind ViewModel.IsBusy,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+
+                    </VariableSizedWrapGrid>
+                </ScrollViewer>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

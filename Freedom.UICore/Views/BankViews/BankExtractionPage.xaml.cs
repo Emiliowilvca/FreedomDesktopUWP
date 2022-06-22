@@ -1,7 +1,7 @@
 ﻿using Freedom.UICore.BaseClass;
 using Freedom.UICore.ViewModels.BankViews;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls;
 
 namespace Freedom.UICore.Views.BankViews

@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="Freedom.UICore.Views.ReturnViews.ReasonReturnPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Freedom.UICore.Views.ReturnViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:ico="using:Freedom.Frontend.FontIcons"
+    xmlns:cc="using:Freedom.UICore.Controls"
+    xmlns:lg="using:Freedom.Utility.Langs"
+    NavigationCacheMode="Enabled"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid cc:GridPlus.RowDefinitions="Auto, *">
+        <StackPanel Grid.Row="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+            <TextBlock Text="{x:Bind lg:Lang.ReturnReason}"  Margin="5 1" />
+            <TextBox x:Name="txtName"
+                     Text="{x:Bind ViewModel.Reason.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     PlaceholderText="{x:Bind lg:Lang.ReturnReason}"
+                     CharacterCasing="Upper"
+                     IsEnabled="{x:Bind ViewModel.EnableControl,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}" />
+            <ProgressBar Grid.Row="0"
+                     Style="{StaticResource ProgressBarStyle}"
+                     Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay, Converter={StaticResource boolvisibilityConverter}}" />
+            <Grid Margin="0 25 0 0">
+                <ScrollViewer>
+                    <VariableSizedWrapGrid ItemHeight="40"
+                                           ItemWidth="150"
+                                           Orientation="Horizontal"
+                                           HorizontalAlignment="Center" >
+                        <!-- Add -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Add}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.CreateNew}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.PlusThick}"
+                                       Command="{x:Bind ViewModel.CreateCommand}"
+                                       IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <!-- edit -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Edit}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.ModifyRecord}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.Pencil}"
+                                       Command="{x:Bind ViewModel.EditCommand}"
+                                       IsEnabled="{x:Bind ViewModel.EnableControl,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <!-- cancel -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.NormaStyle}"
+                                       ContentText="{x:Bind lg:Lang.Cancel}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.Cancel}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.Broom}"
+                                       Command="{x:Bind ViewModel.CancelCommand}"/>
+                        <!-- Save -->
+                        <cc:ButtonPlus Style="{StaticResource ButtonImage.AccentStyle}"
+                                       ContentText="{x:Bind lg:Lang.Save}"
+                                       ToolTipService.ToolTip="{x:Bind lg:Lang.Save}"
+                                       FontImageFamily="{StaticResource MaterialDesignIcons}"                                       
+                                       Glyph="{x:Bind ico:MaterialDesignIcons.ContentSaveOutline}"                        
+                                       Command="{x:Bind ViewModel.SaveCommand}"
+                                       IsEnabled="{x:Bind ViewModel.IsBusy,Mode=OneWay, Converter={StaticResource inverseBoolConverter}}"/>
+                    </VariableSizedWrapGrid>
+                </ScrollViewer>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>
